@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <style>
+        div.cntWrap>div.content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content>div.header>h2{
+            line-height: 80px;
+            text-transform: capitalize;
+            font-weight: 700;
+            font-size: 36px;
+        }
+        div.cntWrap>div.content>div.header>p{
+            width: calc(100% / 12 * 8);
+            line-height: 20px;
+            height: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+        div.cntWrap>div.content>div.section{
+            margin-top: 80px;
+        }
+        div.cntWrap>div.content>div.section::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView{
+            width: calc(100% / 12 * 8);
+            height: 280px;
+            overflow: hidden;
+            float: left;
+            position: relative;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.artGroup{
+            width: 600%;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.artGroup>div.image{
+            width: calc(100% / 6);
+            height: 280px;
+            float: left;
+            background-color: #ccc;
+            text-align: center;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.artGroup>div.image>span{
+            line-height: 280px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 36px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.btns{
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 40px;
+            position: absolute;
+            width: 100%;
+            height: 40px;
+            margin: auto;
+            top: 0; bottom: 0;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.num{
+            width: 100%;
+            height: 40px;
+            position: relative;
+            bottom: 0;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.btns>i:nth-child(1){
+            float: left;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.artView>div.btns>i:nth-child(2){
+            float: right;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts{
+            width: calc(100% / 12 * 4);
+            float: left;
+            padding-left: 20px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco{
+            border-bottom: 1px solid #000;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li{
+            padding-left: 20px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(odd){
+            border-top: 1px solid #000;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(odd)>h3{
+            line-height: 40px;
+            font-weight: 700;
+            text-transform: capitalize;
+            font-size: 18px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even){
+            height: 0px;
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(odd).show+li{
+            height: 160px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even)>h5{
+            line-height: 40px;
+            font-size: 12px;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even)>p{
+            line-height: 20px;
+            height: 80px;
+            overflow: hidden;
+        }
+        div.cntWrap>div.content>div.section>div.article>div.texts>ul.aco>li:nth-child(even)>i{
+            font-size: 25px;
+            padding-top: 10px;
+        }
+
+
+
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('ul.aco>li').even().click(function(){
+                $('ul.aco>li').even().removeClass('show');
+                $(this).addClass('show');
+                // $('ul.aco>li').eq(4).css('border-bottom', '1px solid #000');
+            });
+            $('ul.aco>li').eq(4).click(function(){
+                $(this).css('border-bottom', 'none');
+            });
+
+            i =0;
+            $('.btns>i').first().click(function(){
+                i++;
+                if(i>=5){
+                    i=5;
+                }
+                $('.artView>div.artGroup').css('margin-left',i*-100+'%');
+            });
+            $('.btns>i').last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                $('.artView>div.artGroup').css('margin-left',i*-100+'%');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="header">
+                <h2>content title</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis ad possimus natus dolores quis aut pariatur et sequi ullam consequuntur. Nam accusantium totam nostrum earum eum voluptatem dolores. Sunt, asperiores.</p>
+            </div>
+            <div class="section">
+                <div class="article">
+                    <div class="artView">
+                        <div class="artGroup">
+                            <div class="image i1"><span>image 01</span></div>
+                            <div class="image i2"><span>image 02</span></div>
+                            <div class="image i3"><span>image 03</span></div>
+                            <div class="image i4"><span>image 04</span></div>
+                            <div class="image i5"><span>image 05</span></div>
+                            <div class="image i6"><span>image 06</span></div>
+                        </div>
+                        <div class="num"><span>1</span>/<span>6</span></div>
+                        <div class="btns">
+                            <i class="xi-angle-left"></i>
+                            <i class="xi-angle-right"></i>
+                        </div>
+                    </div>
+                    <div class="texts">
+                        <ul class="aco">
+                            <li class="show"><h3>article title</h3></li>
+                            <li>
+                                <h5>Lorem ipsum dolor sit amet.</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At recusandae quae ipsum labore sit. Tempora quibusdam quasi repellat maxime laudantium iure repellendus ab atque velit! Non sunt culpa adipisci nam!</p>
+                                <i class="xi-pinterest-p"></i>
+                                <i class="xi-linkedin"></i>
+                            </li>
+                            <li><h3>article title</h3></li>
+                            <li>
+                                <h5>Lorem ipsum dolor sit amet.</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At recusandae quae ipsum labore sit. Tempora quibusdam quasi repellat maxime laudantium iure repellendus ab atque velit! Non sunt culpa adipisci nam!</p>
+                                <i class="xi-pinterest-p"></i>
+                                <i class="xi-linkedin"></i>
+                            </li>
+                            <li><h3>article title</h3></li>
+                            <li>
+                                <h5>Lorem ipsum dolor sit amet.</h5>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At recusandae quae ipsum labore sit. Tempora quibusdam quasi repellat maxime laudantium iure repellendus ab atque velit! Non sunt culpa adipisci nam!</p>
+                                <i class="xi-pinterest-p"></i>
+                                <i class="xi-linkedin"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

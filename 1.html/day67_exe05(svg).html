@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day67_exe05(svg)</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        svg{
+            width: 220px;
+            height: 220px;
+        }
+        svg>circle{
+            fill: transparent;
+            stroke: crimson;
+            stroke-width: 10;
+            stroke-dasharray: 629;
+            stroke-dashoffset: 629;
+            transform-origin: 50%;
+            transform: rotate(-90deg);
+            stroke-linecap: round;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var percent=0;
+            $({per:0}).animate({per:100},{
+                    duration:1000,
+                    progress:function(){
+                    percent = 629 - ((629 * this.per) / 100);
+                    $('circle').css('stroke-dashoffset', percent);
+                    // 전체스트로크 - (전체스트로크 * 퍼)/ 퍼 오프셋에 들어가는 값 나누기 100 곱하기 100 
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <svg>
+        <circle cx="110" cy="110" r="100"></circle>
+    </svg>
+    <!-- 글 넣고 싶으면 디아이브이로 묶어주고 svg형제요소로 넣어서 포지션으로 위치 잡아주기 -->
+    
+</body>
+</html>

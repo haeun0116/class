@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day40_exe01</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        div.artView>ul.artGroup{
+            width: 500%;
+            height: 500px;
+            transition: margin-left 0.5s;
+        }
+        div.artView>ul.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>ul.artGroup>li{
+            height: 500px;
+            width: calc(100% / 5);
+            float: left;
+        }
+        div.artView>ul.artGroup>li:nth-child(1){
+            background-color: lavender;
+        }
+        div.artView>ul.artGroup>li:nth-child(2){
+            background-color: lightsalmon;
+        }
+        div.artView>ul.artGroup>li:nth-child(3){
+            background-color: lightcoral;
+        }
+        div.artView>ul.artGroup>li:nth-child(4){
+            background-color: lightslategray;
+        }
+        div.artView>ul.artGroup>li:nth-child(5){
+            background-color: lightsteelblue;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var i =0;
+            $('button').first().click(function(){
+                i++;
+                if(i>4){
+                    i=4;
+                }
+                $('div.artView>ul.artGroup').css('margin-left', i*-100+'%');
+            });
+            $('button').last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                $('div.artView>ul.artGroup').css('margin-left', i*-100+'%');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+       <ul class="artGroup">
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+       </ul>
+    </div>
+    <button>left</button>
+    <button>right</button>
+</body>
+</html>

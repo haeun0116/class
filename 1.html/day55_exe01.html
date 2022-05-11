@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 500px;
+            position: relative;
+        }
+        .artGroup{
+            width: 500%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .article{
+            width: calc(100% / 5);
+            font-size: 50px;
+            height: 500px;
+            background-color: #ccc;
+        }
+        .paging{
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% / 12);
+            margin: 0 auto;
+            margin-top: -20px;
+        }
+        .paging li{
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            border-radius: 5px;
+            background-color: #000;
+        }
+        .paging li.on{
+            width: 20px;
+        }
+        .btns{
+            height: 40px;
+            width: 100%;
+            position: absolute;
+            top: 0;bottom: 0;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn{
+            font-size: 30px;
+            width: 40px;
+            cursor: pointer;
+            height: 40px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var artGroup =$('.artGroup');
+            var btn =$('.btn');
+    
+            artGroup.find('.article:last').prependTo(artGroup);
+            artGroup.css({marginLeft :'-100%'});
+
+            btn.first().click(function(){
+                artGroup.stop().animate({
+                    marginLeft : '-200%'
+                },500,function(){
+                    artGroup.find('.article:first').appendTo(artGroup);
+                    artGroup.css({marginLeft : '-100%'});
+                });
+            });
+
+            btn.last().click(function(){
+                artGroup.stop().animate({
+                    marginLeft : '0%'
+                },500,function(){
+                    artGroup.find('.article:last').prependTo(artGroup);
+                    artGroup.css({marginLeft : '-100%'});
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article" data-num="0">0</div>
+            <div class="article" data-num="1">1</div>
+            <div class="article" data-num="2">2</div>
+            <div class="article" data-num="3">3</div>
+            <div class="article" data-num="4">4</div>
+        </div> 
+        <div class="btns">
+            <div class="btn"><</div>
+            <div class="btn">></div>
+        </div> 
+        <ul class="paging">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>  
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.cntWrap>div.content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap>div.content>div.article{
+            width: calc(100% / 2 - 20px);
+            height: 400px;
+            margin: 0 10px;
+            float: left;
+            background-color: #ccc;
+            position: relative;
+        }
+        div.cntWrap>div.content>div.article:hover>span{
+            transition: all 0.7s;
+        }
+        div.cntWrap>div.content>div.article>span:nth-child(1){
+            height: 2px;
+            width: 0%;
+            background-color: #000;
+            position: absolute;
+            top: 0;right: 0;
+        }
+        div.cntWrap>div.content>div.article:hover>span:nth-child(1){
+            width: 100%;
+        }
+        div.cntWrap>div.content>div.article>span:nth-child(2){
+            height: 2px;
+            width: 0%;
+            background-color: #000;
+            position: absolute;
+            bottom: 0;left: 0;
+        }
+        div.cntWrap>div.content>div.article:hover>span:nth-child(2){
+            width: 100%;
+        }
+        div.cntWrap>div.content>div.article>span:nth-child(3){
+            height: 0px;
+            width: 2px;
+            background-color: #000;
+            position: absolute;
+            top: 0;left: 0;
+        }
+        div.cntWrap>div.content>div.article:hover>span:nth-child(3){
+            height: 400px;
+        }
+        div.cntWrap>div.content>div.article>span:nth-child(4){
+            height: 0px;
+            width: 2px;
+            background-color: #000;
+            position: absolute;
+            bottom: 0;right: 0;
+        }
+        div.cntWrap>div.content>div.article:hover>span:nth-child(4){
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="article">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="article">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

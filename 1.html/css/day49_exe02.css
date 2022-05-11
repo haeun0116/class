@@ -1,0 +1,128 @@
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.section{
+    width: 100%;
+    height: 480px;
+    margin-top: 100px;
+    position: relative;
+}
+div.cntWrap>div.content>div.section>div.imgView{
+    width: calc(100% / 12 * 7);
+    height: 480px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;top: 0;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup{
+    width: 500%;
+    transition: margin-left 0.5s;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup>div.image{
+    width: calc(100% / 5);
+    height: 480px;
+    float: left;
+    font-size: 50px;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup>div.image.i1{
+    background-color: lightgreen;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup>div.image.i2{
+    background-color: olivedrab;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup>div.image.i3{
+    background-color: plum;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup>div.image.i4{
+    background-color: lightsteelblue;
+}
+div.cntWrap>div.content>div.section>div.imgView>div.imgGroup>div.image.i5{
+    background-color: steelblue;
+}
+
+div.cntWrap>div.content>div.section>div.artView{
+    width: calc(100% / 12 * 8);
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    margin: auto;
+    top: 0;bottom: 0;right: 0;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup{
+    width: 500%;
+    transition: margin-left 0.5s;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article{
+    width: calc(100% / 5);
+    height: 400px;
+    float: left;
+    background-color: #000;
+    color:#fff;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.texts{
+    padding: 40px calc(100% / 8);
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.texts>h3{
+    font-size: 36px;
+    line-height: 80px;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.texts>p{
+    width: calc(100% / 8 * 5.2 );
+    font-size: 16px;
+    line-height: 20px;
+    height: 120px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+div.cntWrap>div.content>div.section>div.artView>div.artGroup>div.article>div.texts>div.btn{
+    margin-top: 40px;
+    line-height: 40px;
+    text-align: center;
+    height: 40px;
+    width: calc(100% / 8 * 1.5);
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+}
+div.cntWrap>div.content>div.section>ul.paging::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content>div.section>ul.paging{
+    width: 12%;
+    height: 25px;
+    position: absolute;
+    bottom: 0; right: 28%;
+}
+div.cntWrap>div.content>div.section>ul.paging>li{
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    background-color: #000;
+    float: left;
+    margin: 0px 3px;
+}
+div.cntWrap>div.content>div.section>ul.paging>li.on{
+    background-color: #f00;
+}
+div.cntWrap>div.content>div.section>div.btns{
+    width: 12%;
+    height: 25px;
+    position: absolute;
+    bottom: 0; right: 0;
+}
+div.cntWrap>div.content>div.section>div.btns>i{
+    font-size: 18px;
+    margin: 0px 4px;
+}
+div.cntWrap>div.content>div.section>div.btns>i:nth-child(2){
+    display: none;
+}

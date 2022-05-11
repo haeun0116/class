@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    /* 홀수odd */
+    div.bnrWrap.bnrWrap01{}
+    div.bnrWrap.bnrWrap01>div.banner.bnr01{
+      width: 80%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul{
+      width: 100%;
+      height: 440px;
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li:nth-child(odd){
+      width: 0;
+      overflow: hidden;
+      height: 440px;
+      background-color: red;
+      float: left;
+      transition: all 0.7s;
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li:nth-child(odd).show{
+      width: calc(100% / 12 * 6.4 );
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li:nth-child(even){
+      width: calc(100% / 12 * 1.4 );
+      height: 440px;
+      background-color: red;
+      float: left;
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li{
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i1{
+      background-image: url('./images/2.sub1/sub1_bnr01_i1.jpg');
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i2{
+      background-image: url('./images/2.sub1/sub1_bnr01_i2.jpg');
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i3{
+      background-image: url('./images/2.sub1/sub1_bnr01_i3.jpg');
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i4{
+      background-image: url('./images/2.sub1/sub1_bnr01_i4.jpg');
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i5{
+      background-image: url('./images/2.sub1/sub1_bnr01_i5.jpg');
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i6{
+      background-image: url('./images/2.sub1/sub1_bnr01_i6.jpg');
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i7{
+      background-image: url('./images/2.sub1/sub1_bnr01_i7.jpg');
+    }
+    div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li.i8{
+      background-image: url('./images/2.sub1/sub1_bnr01_i8.jpg');
+    }
+
+  </style>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      $('div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li').first().addClass('show')
+      $('div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li').odd().click(function(){
+        $('div.bnrWrap.bnrWrap01>div.banner.bnr01>ul>li').removeClass('show')
+        $(this).prev().addClass('show')
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="bnrWrap bnrWrap01">
+    <div class="banner bnr01">
+      <ul>
+        <li class="i1"></li>
+        <li class="i2"></li>
+        <li class="i3"></li>
+        <li class="i4"></li>
+        <li class="i5"></li>
+        <li class="i6"></li>
+        <li class="i7"></li>
+        <li class="i8"></li>
+      </ul>
+    </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <link rel="stylesheet" href="./css/day49_exe02.css">
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var iV =$('.imgView');
+            var iG =$('.imgGroup');
+            var aV =$('.artView');
+            var aG =$('.artGroup');
+            var btn =$('.section>div.btns>i');
+            var paging =$('.paging>li');
+            var i =0;
+
+            function leftSlide(){
+                i++;
+                i = i%5;
+                if(i>=4){
+                     i=4;
+                 } 
+                aG.css({marginLeft : i*-100+'%'});
+                iG.css({marginLeft : i*-100+'%'});
+                paging.removeClass('on');
+                paging.eq(i).addClass('on');
+            };
+
+            function rightSlide(){
+                i--;
+                if(i<=0){
+                     i=0;
+                 } 
+                
+                aG.css({marginLeft : i*-100+'%'});
+                iG.css({marginLeft : i*-100+'%'});
+                paging.removeClass('on');
+                paging.eq(i).addClass('on');
+            };
+
+            function indexSlide(){
+                var ind = $(this).index();
+                aG.css({marginLeft : ind*-100+'%'});
+                iG.css({marginLeft : ind*-100+'%'});
+                paging.removeClass('on');
+                $(this).addClass('on');
+                i=ind;
+            };
+
+            paging.click(indexSlide);
+            btn.eq(2).click(leftSlide);
+            btn.last().click(rightSlide);
+
+            var auto = setInterval(leftSlide,1000);
+            // 얘는 변수이기때문에 밑에 첫번째 버튼에서 이 변수를 사용하면서 오토라는 이 변수를 클리어로 멈춰줬기 때문에 다시 클릭했을 때 오토가 다시 세팅될 수 있게 변수를 다시 맞춰줘야 함 (j=0으로 위에서 선언해주고 밑에 콜백함수 안에 j=1로 바꿔줬으면, 그 밑 콜백함수에서 또 j=0으로 바꿔주고 사용해야 하는 것과 같은 의미)
+
+            btn.first().click(function(){
+                clearInterval(auto);
+                btn.eq(1).css('display','inline');
+                btn.first().css('display','none');
+             
+            });
+
+            btn.eq(1).click(function(){
+                auto = setInterval(leftSlide,1000);
+                btn.first().css('display','inline');
+                btn.eq(1).css('display','none');
+              
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="section">
+                <div class="imgView">
+                    <div class="imgGroup">
+                        <div class="image i1">1</div>
+                        <div class="image i2">2</div>
+                        <div class="image i3">3</div>
+                        <div class="image i4">4</div>
+                        <div class="image i5">5</div>
+                    </div>
+                </div>
+                <div class="artView">
+                    <div class="artGroup">
+                        <div class="article a1">
+                            <div class="texts">
+                                <h3>content title1</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos id nisi optio unde expedita, eum totam necessitatibus ducimus officiis, pariatur impedit? Ipsam libero repellendus iure! Aut commodi cum distinctio!</p>
+                                <div class="btn">button</div>
+                            </div>
+                        </div>
+                        <div class="article a2">
+                            <div class="texts">
+                                <h3>content title2</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos id nisi optio unde expedita, eum totam necessitatibus ducimus officiis, pariatur impedit? Ipsam libero repellendus iure! Aut commodi cum distinctio!</p>
+                                <div class="btn">button</div>
+                            </div>
+                        </div>
+                        <div class="article a3">
+                            <div class="texts">
+                                <h3>content title3</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos id nisi optio unde expedita, eum totam necessitatibus ducimus officiis, pariatur impedit? Ipsam libero repellendus iure! Aut commodi cum distinctio!</p>
+                                <div class="btn">button</div>
+                            </div>
+                        </div>
+                        <div class="article a4">
+                            <div class="texts">
+                                <h3>content title4</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos id nisi optio unde expedita, eum totam necessitatibus ducimus officiis, pariatur impedit? Ipsam libero repellendus iure! Aut commodi cum distinctio!</p>
+                                <div class="btn">button</div>
+                            </div>
+                        </div>
+                        <div class="article a5">
+                            <div class="texts">
+                                <h3>content title5</h3>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore dignissimos id nisi optio unde expedita, eum totam necessitatibus ducimus officiis, pariatur impedit? Ipsam libero repellendus iure! Aut commodi cum distinctio!</p>
+                                <div class="btn">button</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="paging">
+                    <li class="on"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btns">
+                    <i class="xi-pause"></i>
+                    <i class="xi-play"></i>
+                    <i class="xi-angle-left"></i>
+                    <i class="xi-angle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

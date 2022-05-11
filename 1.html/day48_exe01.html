@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            height: 500px;
+        }
+        div.artView>div.artGroup{
+            width: 500%;
+            height: 500px;
+        }
+        div.artView>div.artGroup>div.article{
+            width: calc(100% / 5);
+            height: 500px;
+            font-size: 72px;
+            float: left;
+            transition: width 0.5s;
+        }
+        div.artView>div.artGroup>div.article.i1{
+            background-color: lightgreen;
+        }
+        div.artView>div.artGroup>div.article.i2{
+            background-color: pink;
+        }
+        div.artView>div.artGroup>div.article.i3{
+            background-color: lightblue;
+        }
+        div.artView>div.artGroup>div.article.i4{
+            background-color: cornflowerblue;
+        }
+        div.artView>div.artGroup>div.article.i5{
+            background-color: indianred;
+        }
+        div.artView>div.btns{
+            position: absolute;
+            margin: auto;
+            top: 0;bottom: 0;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        div.artView>ul.paging{
+            width: calc(100% / 12 * 2);
+            height: 30px; 
+            position: absolute;
+            bottom: 0;
+            left: 0; right: 0;
+            margin: auto;
+        }
+        div.artView>ul.paging>li{
+            width: 15px;
+            height: 15px;
+            background-color: #000;
+            border-radius: 7px;
+            margin: 0px 3px;
+            float: left;
+        }
+        div.artView>ul.paging>li.on{
+            width: 30px;
+        }
+
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+
+           var btns = $('.btns');
+           var artGroup = $('.artGroup');
+           var paging = $('ul.paging>li');
+           var i = 0;
+
+           btns.find('button').first().click(function(){
+               i++;
+               i= i%5;
+               artGroup.find('.article').css({width : '0'});
+               artGroup.find('.article').eq(i).css({width : 'calc(100% / 5)'});
+               paging.removeClass('on');
+               paging.eq(i).addClass('on');
+           });
+           btns.find('button').last().click(function(){
+               i--;
+               i= (5+i)%5;
+               artGroup.find('.article').css({width : 0});
+               artGroup.find('.article').eq(i).css({width : 'calc(100% / 5)'});
+               paging.removeClass('on');
+               paging.eq(i).addClass('on');
+           });
+
+           paging.click(function(){
+               var ind =$(this).index();
+               artGroup.find('.article').css({width : 0});
+               artGroup.find('.article').eq(ind).css({width : 'calc(100% / 5)'});
+               paging.removeClass('on');
+               $(this).addClass('on');
+               i=ind;
+           });
+
+
+           
+        });
+        
+
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article i1">1</div>
+            <div class="article i2">2</div>
+            <div class="article i3">3</div>
+            <div class="article i4">4</div>
+            <div class="article i5">5</div>
+        </div>
+        <div class="btns">
+            <button> < </button>
+            <button> > </button>
+        </div>
+        <ul class="paging">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

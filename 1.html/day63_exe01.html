@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day63_exe01</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/day63_exe01.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var loc =[];
+            for(var i =0; i<$('body>div').length; i++){
+                loc[i] = $('body>div').eq(i).offset().top;
+                // console.log(loc);
+            }
+            $('.paging li').click(function(){
+                ind = $(this).attr('data-num');
+                $('html').animate({scrollTop:loc[ind]})
+                console.log(ind);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="indexWrap">
+        <div class="index">
+            <ul class="paging">
+                <li data-num="4">page1</li>
+                <li data-num="3">page2</li>
+                <li data-num="1">page3</li>
+                <li data-num="5">page4</li>
+                <li data-num="2">page5</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cntWrap cnt1">page3</div>
+    <div class="cntWrap cnt2">page5</div>
+    <div class="cntWrap cnt3">page2</div>
+    <div class="cntWrap cnt4">page1</div>
+    <div class="cntWrap cnt5">page4</div>
+    
+</body>
+</html>

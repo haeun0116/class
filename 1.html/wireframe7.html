@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/wireframe7.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var hdr = $('.hdrWrap');
+            var btn = $('.cnt01>div.section>div.btns>i');
+            var artGroup = $('.cnt01>div.section>div.artGroup');
+            var article = $('.cnt01>div.section>div.artGroup>div.article');
+            i =0;
+
+            $(window).scroll(function(){
+                var now = $(this).scrollTop();
+                // if(now >= 1){
+                //     hdr.css({
+                //         position : 'fixed',
+                //         backgroundColor : '#fc0',
+                //         width : '100%'
+                //     });
+                // }else{
+                //     hdr.css({
+                //         position : 'inherit',
+                //         backgroundColor : '#222',
+                //     });
+                // }
+
+                if(now >= 1){
+                    hdr.addClass('fix');
+                }else{
+                    hdr.removeClass('fix');
+                }
+
+                artGroup.find('.article:last').prependTo(artGroup);
+                artGroup.css({marginLeft : '-16%'})
+                
+                btn.first().click(function(){
+                    artGroup.stop().animate({
+                        marginLeft : '-32%'
+                    },1500,function(){
+                        artGroup.find('.article:first').appendTo(artGroup);
+                        artGroup.css({marginLeft : '-16%'})
+                    });
+                });
+                btn.last().click(function(){
+                    artGroup.stop().animate({
+                        marginLeft : '0%'
+                    },1500,function(){
+                        artGroup.find('.article:last').prependTo(artGroup);
+                        artGroup.css({marginLeft : '-16%'})
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="hdrWrap">
+        <div class="header">
+            <h1>logo</h1>
+            <ul class="menu">
+                <li>sub1</li>
+                <li>sub2</li>
+                <li>sub3</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mainWrap">
+        <div class="main"></div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt01">
+            <div class="header">
+                <h2>content title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At facilis sequi reiciendis nisi reprehenderit non maiores rem tempora inventore! Reprehenderit, necessitatibus amet atque corrupti quaerat omnis sequi odit saepe recusandae. </p>
+            </div>
+            <div class="section">
+                 <div class="btns">
+                     <i class="xi-angle-left-min"></i>
+                     <i class="xi-angle-right-min"></i>
+                 </div>
+                 <div class="artGroup">
+                     <div class="article">
+                         <div class="image">1</div>
+                         <div class="texts"></div>
+                     </div>
+                     <div class="article">
+                         <div class="image">2</div>
+                         <div class="texts"></div>
+                     </div>
+                     <div class="article">
+                         <div class="image">3</div>
+                         <div class="texts"></div>
+                     </div>
+                     <div class="article">
+                         <div class="image">4</div>
+                         <div class="texts"></div>
+                     </div>
+                     <div class="article">
+                         <div class="image">5</div>
+                         <div class="texts"></div>
+                     </div>
+                     <div class="article">
+                         <div class="image">6</div>
+                         <div class="texts"></div>
+                     </div>
+                     <div class="article">
+                        <div class="image">7</div>
+                        <div class="texts"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image">8</div>
+                        <div class="texts"></div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt02">
+            <div class="header">
+                <h2>content title</h2>
+            </div>
+            <div class="section">
+                <div class="article">
+                    <div class="image"></div>
+                    <div class="texts">자세히보기</div>
+                </div>
+                <div class="article">
+                    <div class="image"></div>
+                    <div class="texts">자세히보기</div>
+                </div>
+                <div class="article">
+                    <div class="image"></div>
+                    <div class="texts">자세히보기</div>
+                </div>
+                <div class="article">
+                    <div class="image"></div>
+                    <div class="texts">자세히보기</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cntWrap">
+        <div class="content cnt03">
+            <div class="header">
+                <h2>content title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, fuga eos sed tempora architecto, optio accusantium deserunt, iste repellendus distinctio aliquid fugiat! Corporis, tempore. In iure nemo magni et eos.</p>
+            </div>
+            <div class="section">
+                <div class="artLeft">
+                    <div class="article">
+                        <div class="image"></div>
+                        <div class="texts">
+                            <h3>segment title</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque delectus excepturi deleniti enim saepe perferendis quaerat officia. Atque, excepturi? Nesciunt aliquam velit culpa accusantium, ad dignissimos fugit sapiente et delectus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate totam laboriosam nam non enim! Qui numquam voluptate quas dicta deserunt consequatur. Aperiam consequatur asperiores consectetur, soluta rerum voluptatem voluptates non?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="artRight">
+                    <div class="artTop">
+                        <div class="article">
+                            <div class="image"></div>
+                            <div class="texts"></div>
+                        </div>
+                        <div class="article">
+                            <div class="image"></div>
+                            <div class="texts"></div>
+                        </div>
+                    </div>
+                    <div class="artBtm">
+                        <div class="article">
+                            <div class="image"></div>
+                            <div class="texts"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ftrWrap">
+        <div class="footer">
+            <div class="ftrLeft">
+                <h1>logo</h1>
+            </div>
+            <div class="ftrMid">
+                <ul class="info">
+                    <li>개인정보처리방침</li>
+                    <li>사이트맵</li>
+                    <li>찾아오는 길</li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos, repellat fugit reiciendis asperiores ut esse totam eveniet fugiat eos repudiandae sit aspernatur enim dolores saepe tempora beatae earum aliquid consequuntur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, excepturi impedit explicabo aliquid accusamus ad at est sunt nostrum repellendus sit ipsum cum officiis asperiores doloribus aliquam fuga dolorum. Fugiat.</p>
+            </div>
+            <div class="ftrRight">
+                <i class="xi-instagram"></i>
+                <i class="xi-facebook"></i>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

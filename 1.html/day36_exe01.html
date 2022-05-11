@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    // var num1 = parseInt(prompt('숫자를 입력해주세요!')); 
+    // var num2 = parseInt(prompt('숫자를 입력해주세요!'));
+
+    // alert(num1+'%'+num2+'='+parseInt(num1%num2));
+
+    // if(num1>=5){
+    //   alert('5입니다.');
+    // }
+
+    // var age = parseInt(prompt('나이를 입력해주세요.'));
+
+    // if(age<20){
+    //   alert('미성년자입니다.');
+    // }
+
+    // var num1 = parseInt(prompt('숫자를 입력해주세요!')); 
+    // var num2 = parseInt(prompt('숫자를 입력해주세요!'));
+    // var sum = num1+num2;
+
+    // if(sum>=10){
+    //   alert(num1+'과'+num2+'를 더한 값이 10이상입니다.')
+    // }
+
+
+    // var num = parseInt(prompt('숫자를 입력하세요!'));
+    // if(num%2 == 0){
+    //   alert('짝수입니다!');
+    // }else if(num%2 == 1){
+    //   alert('홀수입니다!');
+    // }else{
+    //   alert('숫자를 입력해주세요!');
+    // }
+
+    // var gender = prompt('성별을 입력해주세요');
+
+    // if(gender == 'male'){
+    //   alert('남성입니다');
+    // }else if(gender == 'female'){
+    //   alert('여성입니다');
+    // }else{
+    //   alert('male,female 중 하나를 입력해주세요')
+    // }
+
+    // switch(gender){
+    //   case 'male' : alert('남성입니다!');
+    //   break;
+    //   case 'female' : alert('여성입니다!');
+    //   default : alert('male, female 중 하나만 입력하세요');
+    // }
+
+
+    // var food = prompt('음식을 입력하세요!');
+
+    // switch(food){
+    //   case '짜장면' : alert('당신이 좋아하는 요리는 중식입니다.');
+    //   break;
+    //   case '볶음밥' : alert('당신이 좋아하는 요리는 중식입니다.');
+    //   break;
+    //   case '스테이크' : alert('당신이 좋아하는 요리는 양식입니다.');
+    //   break;
+    //   case '파스타' : alert('당신이 좋아하는 요리는 양식입니다.');
+    //   break;
+    //   case '우동' : alert('당신이 좋아하는 요리는 일식입니다.');
+    //   break;
+    //   case '초밥' : alert('당신이 좋아하는 요리는 일식입니다.');
+    //   break;
+    //   default : alert('짜장면, 볶음밥, 스테이크, 파스타, 우동, 초밥 중의 하나를 입력해주세요');
+    // }
+
+    // if(food == '짜장면' || food == '볶음밥'){
+    //   alert('당신은 중식을 좋아합니다!');
+    // }else if(food == '스테이크' || food == '파스타'){
+    //   alert('당신은 양식을 좋아합니다!');
+    // }else if(food == '우동' || food == '초밥'){
+    //   alert('당신은 일식을 좋아합니다!');
+    // }else{
+    //   alert('짜장면, 볶음밥, 스테이크, 파스타, 우동, 초밥 중의 하나를 입력해주세요');
+    // }
+
+    // var num1 = prompt('숫자를 입력하세요!');
+    // var num2 = prompt('숫자를 입력하세요!');
+
+    // if(num1%2 == 0 && num2%2 == 0){
+    //   alert('입력한 두 값 모두 짝수입니다');
+    // }else if(num1%2 == 1 && num2%2 == 1){
+    //   alert('입력한 두 값 모두 홀수입니다');
+    // }else if(num1%2 == 1 && num2%2 == 0){
+    //   alert(num1+'은 홀수입니다');
+    // }else if(num1%2 == 1 && num2%2 == 0){
+    //   alert(num1+'은 홀수입니다');
+    // }else if(num1%2 == 0 && num2%2 == 1){
+    //   alert(num2+'은 홀수입니다');
+    // }else{
+    //   alert('숫자가 아닙니다');
+    // }
+
+    // var i =0 ;
+    // while(i<5){
+    //   console.log('5보다 작은 수입니다.');
+    // //   i++;
+    // }
+
+
+    // var student = prompt('이름을 입력해주세요');
+    // console.log(student+'님, 환영합니다.');
+
+    // var grade = prompt('학년을 입력해주세요.');
+    // console.log(student+'님은'+grade+'학년입니다.');
+
+    // var info = [prompt('이름을 입력해주세요.'), prompt('좋아하는 음식을 입력해주세요.')];
+    // console.log(info[0]+'님이 좋아하는 음식은'+info[1]+' 입니다.');
+
+    // var fruit = [prompt('과일을 입력해주세요'),prompt('과일을 입력해주세요'),prompt('과일을 입력해주세요'),prompt('과일을 입력해주세요'),prompt('과일을 입력해주세요')];
+    // console.log('첫번째 입력 과일 : '+fruit[0]+', '+'다섯번째 입력 과일 : '+fruit[4]);
+
+    // 반복문
+    // var i =0;
+    // while(i < 10){
+    //   console.log(i);
+    //   i++;
+    // }
+
+    // var dan = Number(prompt('단수를 입력'));
+    // var i =1;
+    // while(i < 10){
+    //   console.log(dan+'*'+i+'='+(dan*i));
+    //   i++;
+    // }
+
+    for(var i = 1; i < 11; i++){
+      if(i%3 == 0){
+        console.log(i+'little indians');
+      }else if(i < 10){
+        console.log(i+'little');
+      }else if(i = 10){
+        console.log(i+'little indian boys');
+      }
+    }
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

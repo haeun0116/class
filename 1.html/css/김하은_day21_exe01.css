@@ -1,0 +1,364 @@
+/* 메뉴탑 */
+div.metopWrap{
+    background-color: lightcoral;
+}
+div.metopWrap>div.menuTop{
+    /* 그리드 공식 */
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    line-height: 40px;
+    /* 폰트 사이즈 가이드대로 폰트 사이즈를 설정해줬습니다 */
+    font-size: 15px;
+}
+div.metopWrap>div.menuTop::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.metopWrap>div.menuTop>div.logos{
+    /* 플로트 레프트를 줘서 부유시켜 가로정렬을 맞춰줬습니다 */
+    float: left;
+}
+div.metopWrap>div.menuTop>div.logos>i{}
+div.metopWrap>div.menuTop>ul.nav{
+    /* 오른쪽으로 붙어야해서 플로트 라이트를 줘 오른쪽으로 가로정렬해줬습니다 */
+    float: right;
+}
+div.metopWrap>div.menuTop>ul.nav>li{
+    /* 오른쪽으로 붙인 애들이 다시 자기들끼리 가로정렬이 될 수 있게 플로트 라이트르르 줘 가로정렬해줬습니다 */
+    float: left;
+    /* 마진을 줘서 각각 요소들을 뜯어놨습니다 */
+    margin-left: 20px;
+}
+
+/* 헤더 */
+div.hdrWrap{
+    background-color: lightpink;
+}
+div.hdrWrap>div.header{
+    /* 그리드 공식 */
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    line-height: 80px;
+}
+div.hdrWrap>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.hdrWrap>div.header>h1{
+    /* 네비게이션이랑 같이 가로정렬을 하려면 h1에게도 플로트를 줬었어야! */
+    float: left;
+    /* 폰트 사이즈 가이드대로 폰트 사이즈를 설정해줬습니다 */
+    font-size: 20px;
+    /* 폰트를 전체 대문자로 바꿔줬습니다 */
+    text-transform: uppercase;
+}
+div.hdrWrap>div.header>ul.nav{
+    float: right;
+    line-height: 80px;
+    /* 폰트 사이즈 가이드대로 폰트 사이즈를 설정해줬습니다 */
+    font-size: 20px;
+    /* 폰트를 제일 첫 글자만 대문자로 바꿔줬습니다 */
+    text-transform: capitalize;
+}
+div.hdrWrap>div.header>ul.nav>li{
+    float: left;
+    margin-left: 40px;
+}
+div.hdrWrap>div.header>ul.nav>li>i{}
+
+/* 컨텐츠 공통 */
+div.cntWrap{}
+div.cntWrap>div.content{
+    /* 그리드 공식 */
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header>h2{
+    /* 컨텐츠들 헤더 텍스트들이 다 같기 때문에 공통영역에서 라인하이트로 높이 지정 */
+    line-height: 80px;
+    text-align: center;
+    /* 폰트 사이즈 가이드대로 폰트 사이즈를 설정해줬습니다 */
+    font-size: 25px;
+    /* 폰트를 좀 굵은글씨로 바궈줬습니다 */
+    font-weight: 700;
+    /* 제일 앞글자만 대문자로 바꿔줬습니다 */
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.header>p{
+    /* 컨텐츠들 헤더 텍스트들이 다 같기 때문에 공통영역에서 라인하이트로 높이 지정 */
+    line-height: 20px;
+    /* 텍스트 박스는 박스 자체의 높이 또한 지정해 줘야함 */
+    height: 40px;
+    text-align: center;
+    /* 폰트 사이즈 가이드대로 폰트 사이즈를 설정해줬습니다 */
+    font-size: 12px;
+    /* 지정한 사이즈보다 넘어가는 글자들을 모두 숨겨주었습니다 */
+    overflow: hidden;
+}
+div.cntWrap>div.content div.section{
+    /* 공통적으로 섹션과 헤더의 공간이 80px 떨어져있어 공통영역에 마진을 줬씁니다 */
+    margin-top: 80px;
+}
+div.cntWrap>div.content div.texts{
+    /* 아티클의 텍스트들이 거의 가운데 정렬이라 가운데 정렬로 맞춰줬습니다 */
+    text-align: center;
+}
+div.cntWrap>div.content div.texts>h3{
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content div.texts>h5{
+    font-size: 12px;
+}
+div.cntWrap>div.content div.texts>p{
+    font-size: 12px;
+    overflow: hidden;
+}
+div.cntWrap>div.content div.article{
+    margin: 0px 10px;
+}
+div.cntWrap>div.content div.image{
+    background-color: lightpink;
+}
+
+/* 컨텐츠1 */
+div.cntWrap>div.content.cnt01{
+    /* 위로 공간을 가지고 있어 마진을 줬습니다 */
+    margin-top: 160px;
+}
+div.cntWrap>div.content.cnt01>div.header{}
+div.cntWrap>div.content.cnt01>div.header>h2{}
+div.cntWrap>div.content.cnt01>div.header>p{
+    /* 텍스트 박스의 너비를 지정해줬습니다 */
+    width: calc(100% / 12 * 4.5);
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt01>div.section{}
+div.cntWrap>div.content.cnt01>div.section>div.artTop{}
+div.cntWrap>div.content.cnt01>div.section>div.artTop::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article{
+    /* 아티클이 두개로 나눠지기 때문에 부모요소w값인 그리드의 50%에 각 마진을 20px씩 -해줘야 한다 */
+    width: calc(50% - 20px);
+    float: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.image{
+    /* 이미지기 때문에 높이가 필요 */
+    height: 320px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts{
+    /* 여기만 텍스트 정렬이 왼쪽으로 되어 있어서 공통에서 가운데 정렬을 넣어주고 여기서 따로 왼쪽 정렬을 헤줬습니다 */
+    text-align-last: left;
+    /* 텍스트들에게 패딩을 주어 안쪽으로 정리해줬습니다 */
+    padding-top: 20px;
+    padding-left: calc(100% / 6 * 0.5);
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>h3{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>h5{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>p{
+    line-height: 20px;
+    height: 80px;
+    width: calc(100% / 6 * 3.5);
+    text-align: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>div.sns{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artTop>div.article>div.texts>div.sns>i{}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm{
+    /* 아트탑과 뜯어놓기 위해 마진을 줬습니다 */
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article{
+    /* 아티클이 세개로 나눠지기 때문에 부모요소 w값인 그리드를 3으로 나눠주고 각 마진을 20px씩 -해줘야 한다 */
+    width: calc(100% / 3 - 20px);
+    /* 플로트를 줘 부유시켜 가로정렬을 해줬습니다 */
+    float: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.image{
+    height: 340px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts{
+    /* 텍스트들에게 패딩을 줘서 안쪽으로 정리했습니다 */
+    padding: 20px 20px 0px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>h3{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>p{
+    line-height: 20px;
+    height: 80px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>div.sns{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>div.sns>i{}
+
+/* 컨텐츠2 */
+div.cntWrap:nth-child(4){
+    /* 여기는 헤더에 배경이 들어가 있어서 랩을 선택해서 마진을 넣어줬습니다 */
+    margin-top: 120px;
+}
+div.cntWrap>div.content.cnt02{
+    /* 컨텐츠2에서는 꽉차게 배경을 설정해줘야해서 그리드 크기인 80%보다 커야하므로 컨텐츠 랩의 100%로 너비를 설정해줘야한다. */
+    width: 100%;
+    max-width: 100%;
+}
+div.cntWrap>div.content.cnt02>div.header{
+    /* 헤더에는 배경이 있어서 그 배경을 놔두기 위해 패딩을 사용하여 안쪽으로 정리해줬습니다 */
+    padding-top: 160px;
+    padding-bottom: 280px;
+    background-color: lightcoral;
+}
+div.cntWrap>div.content.cnt02>div.header>h2{}
+div.cntWrap>div.content.cnt02>div.header>p{
+    width: calc(80% / 12 * 8);
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt02>div.section{
+    /* 섹션의 너비는 그리드의 너비에 꽉차기 때문에 그리드와 같은 80%로 설정해준다 */
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* 헤더와 섹션이 겹쳐있는 모양이라 섹션에 마진을 - 로 넣어줘서 겹쳐지게 만들었습니다 */
+    margin-top: -200px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article{
+    /* 아티클 상자에 그림자 만들어주기 */
+    box-shadow: 2px 2px 4px #ccc;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{
+    /* 이미지와 텍스트가 섹션의, 아티클의 반이므로 부모요소가 이미 그리드의 크기에 꽉차게 설정돠어 있으므로 50%로 너비를 준다 */
+    width: 50%;
+    height: 400px;
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts{
+    width: 50%;
+    height: 400px;
+    /* 마찬가지로 부유시켜 가로정렬을 해줬습니다 */
+    float: left;
+    /* 패딩을 이용해 텍스트들을 안쪽으로 정라해줬습니다 */
+    padding: 80px calc(100% / 12 ) ;
+    background-color: #fff;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>h3{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>h5{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>p{
+    line-height: 20px;
+    height: 100px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts>div.btn{
+    line-height: 40px;
+    width: calc(100% / 6 * 2.5 );
+    background-color: lightcoral;
+    text-align: center;
+    margin: 0 auto;
+    /* 버튼 상자를 타원형으로 만들어주기! */
+    border-radius: 20px;
+    /* 커서가가면 변하게 포인터로 */
+    cursor: pointer;
+    color: #fff;
+}
+
+/* 컨텐츠3 */
+div.cntWrap>div.content.cnt03{
+    margin-top: 320px;
+}
+div.cntWrap>div.content.cnt03>div.header{}
+div.cntWrap>div.content.cnt03>div.header>h2{}
+div.cntWrap>div.content.cnt03>div.header>p{
+    width: calc(100% / 12 * 4.5);
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt03>div.section{}
+div.cntWrap>div.content.cnt03>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article{
+    /* 아티클이 그리드에 4개로 나눠져있어서 25%로 보고 각 마진 20px씩 빼준다 */
+    width: calc(25% - 20px);
+   /* 부유시켜 가로정렬을 해줬습니다 */
+    float: left;
+    /* 아티클에 높이를 넣어주고 오버플로우를 줘서 텍스트들 숨겨주기 */
+    height: 240px;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.image{
+    height: 240px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts{
+    /* 텍스트들에게 패딩을 줘서 안쪽으로 정리해줬습니다 */
+    padding: 40px 20px 60px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts>h3{
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts>p{
+    line-height: 20px;
+    height: 80px;
+}
+
+/* 푸터 */
+div.ftrWrap{
+    background-color: lightcoral;
+    margin-top: 160px;
+}
+div.ftrWrap>div.footer{
+    /* 그리드 공식 */
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    /* 텍스트들을 가운데로 정렬시켜줬습니다 */
+    text-align: center;
+    /* 푸터에도 배경이 있기 때문에 패딩을 줘서 위아래 여유를 만들어줬습니다 */
+    padding: 80px 0;
+}
+div.ftrWrap>div.footer>h1{
+    line-height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+div.ftrWrap>div.footer>p{
+    line-height: 20px;
+    height: 40px;
+    width: calc(100% / 12 * 4.5);
+    margin: 0 auto;
+    font-size: 12px;
+    overflow: hidden;
+}
+div.ftrWrap>div.footer>div.sns{
+    line-height: 80px;
+    font-size: 20px;
+}
+div.ftrWrap>div.footer>div.sns>i{}

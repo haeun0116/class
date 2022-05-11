@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jQuery v1.11.1.js"></script>
+    <script src="./js/jquary_cookie.js"></script>
+    <script>
+        $(function(){
+            var n =prompt('이름을 입력하세요');
+            // console.log(n);
+            $('button').first().click(function(){
+                $.cookie(n,'on',{expires:7});
+            });
+            if($.cookie(n)){
+                alert('재방문입니다');
+            }else{
+                alert('환영합니다');
+            }
+            $('button').last().click(function(){
+                $.cookie(n,{expires:-1});
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>쿠키입력</button>
+    <button>쿠키지우기</button>
+    
+</body>
+</html>

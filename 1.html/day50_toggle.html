@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+        }
+        div.toggleSlide{
+            background-color: aquamarine;
+        }
+        div.toggleClass{
+            background-color: darkolivegreen;
+            width: 0;
+            transition: width 0.5s;
+            /* 트랜지션을 원래 선택자에 주는 이유는 변경 후에 선택자에 넣어준다면 빠질때 트렌지션이 들어가지 않기 때문에 원래의 변경전의 선택자에 넣어주어야 함 */
+        }
+        div.toggleClass.on{
+            background-color: coral;
+            width: 500px;
+        }
+        div.toggleFade{
+            background-color: lightsalmon;
+        }
+
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('button').eq(0).click(function(){
+                $('.toggleSlide').slideToggle(500);
+                // ->토글 슬라이드에는 몇초동안 실핼할 건지에 대한 값밖에 안들어감 ms로 그리고 토글 슬라이드는 위아래밖에 안되고 디스플레이 논으로 아예 사라져버리는 것
+
+            });
+
+            $('button').eq(1).click(function(){
+                $('.toggleClass').toggleClass('on');
+                // ->애드클래스는 리무브해주지 않으면 남아있는데 토글 틀래스는 사라짐
+            });
+
+            $('button').eq(2).click(function(){
+                $('.toggleFade').fadeToggle(500);
+                // 트랜지션이랑 제이쿼리에서 초 수를 받는 함수들이랑은 같이쓰면 충돌 할 수 있음/같은 이벤트 반복은 조심!
+                // 이 친구도 결국은 디스플레이 논으로 들어감
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>토글 슬라이드</button>
+    <div class="toggleSlide"></div>
+    <button>토글 클래스</button>
+    <div class="toggleClass"></div>
+    <button>토글 페이드</button>
+    <div class="toggleFade"></div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>day39_exe01</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    button{
+      width: 100px;
+      height: 50px;
+      background-color: #ccc;
+      transition: all 0.5s;
+    }
+  </style>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      // 두가지 같은 방법임원하는 방법대로 사용.click,.on('cick',function(){})
+      // (mouseover,mouseleave),mousemove 다 같음
+
+      // $('div').click(function(){
+      //   $(this).css({
+      //     'background-color' : '#fc0'
+      //   });
+      // });
+
+      // $('div').mouseover(function(){
+      //   $(this).css({
+      //     'background-color' : '#fc0'
+      //   });
+      // });
+
+      // $('div').mouseleave(function(){
+      //   $(this).css({
+      //     'background-color' : '#f00'
+      //   });
+      // });
+
+      // $('div').mousemove(function(){
+      //   $(this).css({
+      //     'background-color' : 'blue'
+      //   });
+      // });
+
+      // var i =1;
+      // $('button').click(function(){
+      //   $('button').css({
+      //     'width' : '100px',
+      //     'height' : '50px',
+      //     'background-color' : '#ccc'
+      //   });
+      //   $(this).css({
+      //     'width' : '200px',
+      //     'height' : '100px',
+      //     'background-color' : '#fc0'
+      //   });
+      //   $(this).css('height', i++*100);
+      // });
+
+      var i =0;
+      $('button').click(function(){
+        i++;
+        $('button').css({
+          'width' : '100px',
+          'height' : '50px',
+          'background-color' : '#ccc'
+        });
+        $(this).css({
+          'width' : '200px',
+          'height' : i * 100+'px',
+          'background-color' : '#fc0'
+        });
+        $(this).mouseleave(function(){
+          i =0;
+        });
+      });
+
+
+
+    });
+  </script>
+</head>
+<body>
+  <button>버튼1</button>
+  <button>버튼2</button>
+  <button>버튼3</button>
+  
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day65_exe01(drag)</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .container{
+            width: 1000px;
+            height: 1000px;
+            outline: 2px solid red;
+            display: none;
+        }
+        .drag{
+            width: 200px;
+            height: 200px;
+            background-color: #fc0;
+        }
+        .drop{
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+        li{
+            width: 50%;
+            height: 50px;
+            background-color: lightblue;
+            margin: 20px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <!-- ui파일은 무조건 제이쿼리 아래로 불러와야 읽힘 -->
+    <script>
+        $(function(){
+
+            $('.drag').draggable({
+                // 드래그만 가능
+                helper:'clone',
+                // 드래그하면 복제되서 움직임
+                revert:true,
+                // 드래그해서 복제되 애가 자기 자리로 천천히 들어감 (트랜지션을 원래 요소에 주는 거랑 비슷)
+                containment:'.container',
+                // .container컨텐이너 밖으로 나가지 않게 해줌
+            });
+
+            $('.drop').droppable({
+                drop:function(){
+                    var w =$('.drag').css('width');
+                    var h =$('.drag').css('height');
+                    var bg =$('.drag').css('backgroundColor');
+                    $('.drop').css({
+                        width: w,
+                        height: h,
+                        backgroundColor: bg
+                    });
+                }
+            });
+
+            $('ul').sortable();
+            // li들 순서가 드래그 하는대로 변경됨
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="drag"></div>
+        <div class="drop"></div>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

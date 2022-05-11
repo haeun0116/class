@@ -1,0 +1,405 @@
+@font-face{
+    font-family: 'xei';
+    src: url('./fonts/xeicon.ttf');
+}
+
+body{
+    font-family: 'xei';
+}
+
+
+.menutopWrap{
+    background-color: #000;
+    color: #fff;
+}
+.menutopWrap .menuTop{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    font-size: 14px;
+}
+.menutopWrap .menuTop .info{
+    width: calc(100% / 12 * 4);
+    display: flex;
+    justify-content: space-between;
+}
+.menutopWrap .menuTop ul.nav{
+    width: calc(100% / 12 * 4);
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+}
+
+.hdrWrap header{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1080px;
+}
+.hdrWrap header .hdrTop{
+    display: flex;
+    justify-content: space-between;
+    line-height: 120px;
+}
+.hdrWrap header .hdrTop>h1{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.hdrWrap header .hdrTop>h4{
+    font-size: 14px;
+}
+.hdrWrap header .hdrTop>h4 i{
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.hdrWrap header .hdrTop .btn{
+    margin-top: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    height: 40px;
+    background-color: #ff0;
+    color: #555;
+    padding: 0px 10px;
+}
+.hdrWrap header .hdrTop .btn span{
+    padding-left: 10px;
+}
+
+.hdrBtm{
+    background-color: #0e5f4c;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    color: #fff;
+}
+.hdrBtm .menu{
+    width: calc(100% / 12 * 6);
+    line-height: 80px;
+    display: flex;
+    justify-content: space-around;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.hdrBtm .icons{
+    font-size: 16px;
+    line-height: 80px;
+    margin-right: 20px;
+}
+
+
+.mainWrap{
+    background-color: #ddd;
+    margin-top: -40px;
+}
+.mainWrap main{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1080px;
+}
+.mainWrap main .texts{
+    width: calc(100% / 12 * 6.5);
+    padding-top: 320px;
+    padding-bottom: 320px;
+}
+.mainWrap main .texts h2{
+    line-height: 80px;
+    font-size: 55px;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #0e5f4c;
+}
+.mainWrap main .texts h5{
+    line-height: 40px;
+    font-size: 16px;
+}
+
+
+.bnrWrap .banner{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1080px;
+}
+
+.bnrWrap.bnrWrap01{
+    margin-top: -120px;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop{
+    display: flex;
+    justify-content: space-between;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu{
+    width: calc(100% / 4 - 20px);
+    perspective: 1000px;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu .image{
+    height: 240px;
+    background-color: #000;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu:hover .image{
+    transform: rotateY(180deg);
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu .texts{
+    background-color: #eee;
+    padding: 40px 20px;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 1s;
+    margin-top: -240px;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu:hover .texts{
+    transform: rotateY(0deg)
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu .texts h3{
+    font-size: 16px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu .texts h3::before{
+    border: 1px solid #000;
+    width: calc(100% / 3 * 0.2);
+    content: '';
+    display: block;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu .texts p{
+    font-size: 12px;
+    line-height: 20px;
+    height: 80px;
+    color: #555;
+    overflow: hidden;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrTop .menu .texts .btn{
+    font-size: 14px;
+    line-height: 30px;
+    background-color: #fc0;
+    color: #555;
+    width: calc(100% / 3 * 1.5);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrBtm{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrBtm .menu{
+    width: calc(100% / 5 - 20px);
+    display: flex;
+    justify-content: space-between;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrBtm .menu .image{
+    width: calc(100% / 2 * 0.9);
+    background-color: #999;
+    height: 80px;
+    border-radius: 50%;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrBtm .menu .texts h5{
+    line-height: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .bnrBtm .menu .texts h3{
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 40px;
+}
+
+
+.cntWrap{
+    margin-top: 120px;
+}
+.cntWrap .content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.cntWrap .content header{
+    text-align: center;
+}
+.cntWrap .content header h2{
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.cntWrap .content header h2::after{
+    content: '';
+    display: block;
+    border: 3px solid #000;
+    width: calc(100% / 12 );
+    margin: 10px auto;
+}
+.cntWrap .content header h5{
+    font-size: 14px;
+    line-height: 40px;
+}
+.cntWrap .content header p{
+    margin: 0 auto;
+    line-height: 20px;
+    height: 40px;
+    font-size: 14px;
+    overflow: hidden;
+}
+.cntWrap .content section{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap .content section article{
+    width: calc(100% / 4 - 20px);
+}
+.cntWrap .content section article .texts h3{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.cntWrap .content section article .texts p{
+    line-height: 20px;
+    height: 60px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.cntWrap:nth-child(5){
+    background-color: #ccc; 
+    margin-top: 40px;
+}
+.cntWrap .content.cnt01{
+    padding: 120px 0px;
+}
+.cntWrap .content.cnt01 .image{
+    width: calc(100% / 3 * 1.5);
+    height: 120px;
+    border-radius: 50%;
+    background-color: #0e5f4c;
+    margin: 0 auto;
+}
+.cntWrap .content.cnt01 .texts{
+    padding-top: 20px;
+    text-align: center;
+}
+.cntWrap .content.cnt01 .texts p{
+    margin-top: 20px;
+    height: 80px;
+}
+.cntWrap .content.cnt01 .texts .btn{
+    background-color: #666;
+    width: calc(100% / 3 * 1.5);
+    line-height: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.cntWrap .content.cnt02 .image{
+    height: 160px;
+    background-color: #006633;
+}
+.cntWrap .content.cnt02 .texts{
+    padding-top: 30px;
+}
+.cntWrap .content.cnt02 .texts p{
+    color: #555;
+    margin-top: 10px;
+}
+.cntWrap .content.cnt02 .texts .btn{
+    line-height: 40px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+
+.bnrWrap.bnrWrap02{
+    margin-top: 120px;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02{
+    display: flex;
+    justify-content: space-between;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .texts{
+    width: 50%;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .texts .ovrGrid{
+    width: calc((100vw - 1080px) / 2 + 100%);
+    min-width: calc((100vw - 80vw) / 2 + 100%);
+    background-color: #006633;
+    height: 840px;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .image{
+    width: 50%;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .image .ovrGrid{
+    width: calc((100vw - 1080px) / 2 + 100%);
+    min-width: calc((100vw - 80vw) / 2 + 100%);
+    background-color: #ccc;
+    height: 840px;
+}
+
+
+
+
+
+.cntWrap .content.cnt03 .article{
+    width: calc(100% / 4 - 20px );
+    perspective: 500px;
+}
+.cntWrap .content.cnt03 .image{
+    height: 280px;
+    background-color: #ccc;
+    transform: rotateX(0deg);
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+.cntWrap .content.cnt03 .article:hover .image{
+    transform: rotateX(180deg);
+}
+.cntWrap .content.cnt03 .article:hover .texts{
+    transform: rotateX(0deg);
+}
+.cntWrap .content.cnt03 .texts{
+    margin-top: -280px;
+    background-color: #006600;
+    color: #fff;
+    padding: 30px 20px;
+    height: 280px;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+.cntWrap .content.cnt03 .texts h5{
+    font-size: 12px;
+    line-height: 40px;
+}
+.cntWrap .content.cnt03 .texts h3{
+    font-size: 16px;
+    line-height: 20px;
+}
+.cntWrap .content.cnt03 .texts p{
+    line-height: 20px;
+    font-size: 12px;
+    margin-top: 10px;
+    height: 80px;
+    overflow: hidden;
+}
+.cntWrap .content.cnt03 .texts .btn{
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+

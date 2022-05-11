@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day66_exe01</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .cntWrap{
+            margin-top: 100px;
+        }
+        .content{
+            width: 80%;
+            max-width: 1080px;
+            margin:  0 auto;
+        }
+        header{
+            text-align: center;
+        }
+        header>h2{
+            font-size: 36px;
+            text-transform: capitalize;
+            line-height: 80px;
+        }
+        header>p{
+            width: calc(100% / 12 * 4.5);
+            margin: 0 auto;
+            line-height: 20px;
+            height: 40px;
+            overflow: hidden;
+        }
+        section{
+            margin-top: 80px;
+        }
+        section::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .article{
+            width: calc(50% - 20px);
+            float: left;
+            margin: 0px 10px;
+        }
+        .article:nth-child(2)~.article{
+            margin-top: 40px;
+        }
+        .texts{
+            display: flex;
+            justify-content: space-between;
+        }
+        .article h4{
+            font-size: 18px;
+            text-transform: capitalize;
+        }
+        .bar{
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .per{
+            /* width: 80%; */
+            height: 20px;
+            background-color: #3333ff;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var sp =$('h4 span');
+            // 배열로 값이 들어올때 사용할 수 있음
+            // console.log($('span'));
+
+            var t =parseInt($('h4>span').eq(0).text());
+
+            sp.each(function(a){
+                // console.log($(this).attr('data-num'));
+                // 스판렝스에 알아서 배열로 반환해줘서 반복해줌
+                var n=$(this).attr('data-num');
+                console.log(n);
+                $({percent:0}).animate({percent:n},{
+                    duration: 5000,
+                    progress: function(){
+                        // 퍼센트가 밖에 있어서 안으로 가져오려면 디스를 저렇게 사용해야 함 프로그레스 만을 위한 디스임 선택자가 아니라 선택자가 아닌것으로 생각
+                        // console.log(this.percent);
+                        $('h4>span').eq(a).text(parseInt(this.percent));
+                        $('.per').eq(a).css({width : parseInt(this.percent)+'%'});
+                        // this.percent는 채워지는 퍼센트를 의미하는거
+                    }
+                });
+                
+            });
+            
+
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <header>
+                <h2>devision title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis alias quasi doloribus incidunt fugit. Ut tempore sapiente expedita! Quas impedit ducimus modi labore sed alias repellat error itaque quia. Iusto!</p>
+            </header>
+            <section>
+                <div class="article">
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="80">80</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="70">80</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="50">80</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="80">80</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="20">80</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </div>
+                <div class="article">
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="40">80</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

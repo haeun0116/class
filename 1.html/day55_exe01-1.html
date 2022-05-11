@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <style>
+        .wrap{
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1080px;
+        }
+        .view{
+            height: 800px;
+            overflow: hidden;
+            position: relative;
+        }
+        .artGroup{
+            width: 500%;
+            height: 800px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .article{
+            width: calc(100% / 5);
+            height: 800px;
+        }
+        .article.a1{
+            background-color: pink;
+        }
+        .article.a2{
+            background-color: orange;
+        }
+        .article.a3{
+            background-color: yellow;
+        }
+        .article.a4{
+            background-color: green;
+        }
+        .article.a5{
+            background-color: blue;
+        }
+        .paging{
+            width: 20%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        li.show{
+            width: 40px;
+            border-radius: 10px;
+        }
+        li{
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background-color: violet;
+            border-radius: 50%;
+            transition: width 0.5s;
+        }
+        .btns{
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn{
+            cursor: pointer;
+            font-size: 40px;
+        }
+    </style>
+    <script>
+        
+        $(function(){
+            var btn = $('.btn');
+            var gr = $('.artGroup');
+            var li = $('.paging li');
+            var ind =0;
+
+            function left(){
+                var num = gr.find('.article:eq(2)').attr('data-num');
+                console.log(num)
+                gr.animate({
+                   marginLeft:'-200%'
+                },1000,function(){
+                   gr.find('.article:eq(0)').appendTo(gr);
+                   gr.css({marginLeft:'-100%'});
+                   ind =gr.find('.article:eq(1)').attr('data-num');
+                   li.removeClass('show');
+                   li.eq(ind).addClass('show'); 
+            });
+            }
+
+            function right(){
+                gr.animate({
+                   marginLeft:'0%'
+                },1000,function(){
+                   gr.find('.article:last').prependTo(gr);
+                   gr.css({marginLeft:'-100%'});
+                   ind =gr.find('.article:eq(1)').attr('data-num');
+                   li.removeClass('show');
+                   li.eq(ind).addClass('show'); 
+            });
+            }
+
+            gr.css({marginLeft:'-100%'});
+
+            li.click(function(){
+                var now =$(this).index();
+                 if(ind < now){
+                     for(var i =ind; i < now; i++){
+                     left();
+                 }
+                }else {
+                    for(var i =now; i < ind; i++){
+                        right();
+                    }
+                }
+                
+                
+            });
+            btn.first().click(left);
+            btn.last().click(right);
+
+        // li.click(function(){
+        //     var ind = $(this).index();
+        //     li.removeClass('show');
+        //     $(this).addClass('show');    
+        //     console.log(ind); 
+        // });
+
+        // btn.first().click(function(){
+        //     var num = gr.find('.article:eq(2)').attr('data-num')
+        //     console.log(num)
+        //     gr.stop().animate({
+        //         marginLeft:'-200%'
+        //     },1000,function(){
+        //         gr.find('.article:eq(0)').appendTo(gr);
+        //         gr.css({marginLeft:'-100%'});
+        //         ind =gr.find('.article:eq(1)').attr('data-num');
+        //         li.removeClass('show');
+        //         li.eq(ind).addClass('show'); 
+        //     });
+        // });
+        // btn.last().click(function(){
+
+        //     gr.stop().animate({
+        //         marginLeft:'0%'
+        //     },1000,function(){
+        //         gr.find('.article:last').prependTo(gr);
+        //         gr.css({marginLeft:'-100%'});
+        //         ind =gr.find('.article:eq(1)').attr('data-num');
+        //         li.removeClass('show');
+        //         li.eq(ind).addClass('show'); 
+        //     });
+        // });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="view">
+            <div class="artGroup">
+                <div class="article a5" data-num="4">4</div>
+                <div class="article a1" data-num="0">0</div>
+                <div class="article a2" data-num="1">1</div>
+                <div class="article a3" data-num="2">2</div>
+                <div class="article a4" data-num="3">3</div>
+            </div>
+            <ul class="paging">
+                <li class="show"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="btns">
+                <div class="btn">◀</div>
+                <div class="btn">▶</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

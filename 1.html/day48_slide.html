@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day47</title>
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        div.artView>div.artGroup{
+            width: 600%;
+        }
+        div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>div.artGroup>div.article{
+            width: 0;
+            height: 500px;
+            float: left;
+            font-size: 72px;
+            text-align: center;
+            padding-top: 200px;
+            transition: width 0.5s;
+        }
+        div.artView>div.artGroup>div.article:nth-child(1){
+            width: calc(100% / 6);
+        }
+        div.artView>div.artGroup>div.article.i1{
+            background-color: pink;
+        }
+        div.artView>div.artGroup>div.article.i2{
+            background-color: orange;
+        }
+        div.artView>div.artGroup>div.article.i3{
+            background-color: yellow;
+        }
+        div.artView>div.artGroup>div.article.i4{
+            background-color: yellowgreen;
+        }
+        div.artView>div.artGroup>div.article.i5{
+            background-color: skyblue;
+        }
+        div.artView>div.artGroup>div.article.i6{
+            background-color: violet;
+        }
+        div.artView>div.btns{
+            width: 100%;
+            justify-content: space-between;
+            display:flex;
+            position: absolute;
+            height: 40px;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+        }
+        div.artView>ul.paging{
+            position: absolute;
+            width: 20%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 40px;
+        }
+        div.artView>ul.paging::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>ul.paging>li{
+            width: 20px;
+            background-color: #fc0;
+            height: 20px;
+            border-radius: 50%;
+            float: left;
+            margin: 0px 5px;
+            border: 2px solid #222;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+        div.artView>ul.paging>li.show{
+            width: 40px;
+            border-radius: 20px;
+        }
+        
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(function(){
+            
+            var gr = $('.artGroup');           
+            var btn = $('button');           
+            var dex = $('.paging>li');
+            var i = 0;
+            var onoff = true;
+            var events = 'webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend';
+
+
+            // 버튼1
+            dex.click(function(){
+                var ind = $(this).index();
+                dex.removeClass('show');
+                $(this).addClass('show');
+                $('.article').css('width','0%')
+                $('.article').eq(ind).css('width','calc(100% / 6)');
+                i=ind;
+            });
+            
+            btn.eq(0).click(function(){
+                if(onoff){                    
+                i++;
+                i=i%5;
+                onoff = false;
+                }else{
+                    gr.find('.article').on(events,function(){
+                        onoff=true;
+                    });
+                }
+
+                gr.find('.article').css('width','0');
+                gr.find('.article').eq(i).css('width','calc(100% / 6)');    
+
+                dex.removeClass('show');
+                dex.eq(i).addClass('show');
+            });
+
+            // 버튼2         
+            btn.eq(1).click(function(){
+                if(onoff){                   
+                    i--;
+                    i=(5+i)%5    
+                    onoff = false;   
+                }else{   
+                    gr.find('.article').on(events,function(){
+                        onoff= true;   
+                    });
+                }
+
+                gr.find('.article').css('width','0')
+                gr.find('.article').eq(i).css('width','calc(100% / 5)');
+
+                dex.removeClass('show');
+                dex.eq(i).addClass('show');
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article i1">1</div>
+            <div class="article i2">2</div>
+            <div class="article i3">3</div>
+            <div class="article i4">4</div>
+            <div class="article i5">5</div>
+            <div class="article i6">6</div>
+        </div>
+        <div class="btns">
+            <button>◀</button>
+            <button>▶</button>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/day49_exe01.css">
+    <link rel="stylesheet" href="./css/day49_tab.css" media="(max-width:1024px) and (min-width:0px)">
+  <link rel="stylesheet" href="./css/day49_mob.css" media="(max-width:420px) and (min-width:0px)">
+  
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            // 각 디바이스 윈도우의 넓이를 출력해주는
+            var wd = $(window).width();
+            var aV = $('artView');
+            var aG = $('.artView>.artGroup');
+            var paging = $('ul.paging>li');
+            var btn = $('.btns>button');
+            var i=0;
+            var mv =0;
+
+            // 반응형은 이프문으로 사용
+            if(wd > 1024){
+                // pc버전
+                mv =100;
+            }else if(wd >= 420 && wd <= 1024 ){
+                // tab버전
+                 mv =50;
+            }else{
+                // 모바일버전
+                mv =100;
+            }
+
+            // 미리 펑션을 만들어 놓고 콜백함수로는 이름만 불러와서 사용할 수 있음
+            function leftSlide(){
+                i++;
+                i = i%6;
+                if(wd >= 420 && wd <= 1024){
+                    if(i>=4){
+                     i=4;
+                    }
+                }else{
+                    if(i>=5){
+                     i=5;
+                 } 
+                }
+                aG.css({marginLeft : i*-mv+'%'});
+                paging.removeClass('on');
+                paging.eq(i).addClass('on');
+            };
+
+            function rightSlide(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                aG.css({marginLeft : i*-mv+'%'});
+                paging.removeClass('on');
+                paging.eq(i).addClass('on');
+            };
+
+            function indexSlide(){
+                var ind = $(this).index();
+                aG.css({marginLeft : ind*-mv+'%'});
+                paging.removeClass('on');
+                $(this).addClass('on');
+                i=ind;
+            };
+            
+            // 콜백함수를 이렇게 이름만 불러와서 사용
+            paging.click(indexSlide);
+            btn.first().click(leftSlide);
+            btn.last().click(rightSlide);
+
+            // 몇초후에 자동으로 실행해주세요-> 0.5초 후에 레프트슬라이드 펑션을 실행해주세요(초 단위는 ms)
+            // setTimeout(leftSlide,500);
+
+            // 연속적으로 자동 실행
+            var auto = setInterval(leftSlide,1500);
+
+            // 자동으로 움직이다 멈추게 됨
+            btn.first().click(function(){
+                // rightSlide();
+                clearInterval(auto);
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="artView">
+            <div class="artGroup">
+                <div class="article a1">1</div>
+                <div class="article a2">2</div>
+                <div class="article a3">3</div>
+                <div class="article a4">4</div>
+                <div class="article a5">5</div>
+                <div class="article a6">6</div>
+            </div>
+            <ul class="paging">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="btns">
+                <button> < </button>
+                <button> > </button>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

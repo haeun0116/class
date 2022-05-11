@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.cntWrap>ul{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>ul>li:nth-child(odd){
+            line-height: 40px;
+            width: 100%;
+            background-color: #000;
+            color: #ffffff;
+            text-align: center;
+        }
+        div.cntWrap>ul>li:nth-child(even){
+            height: 0px;
+            overflow: hidden;
+            width: 100%;
+            font-size: 14px;
+            line-height: 20px;
+            transition: height 0.5s;
+        }
+        div.cntWrap>ul>li:nth-child(even)>p{
+            height: 60px; 
+            overflow: hidden;
+            padding: 10px 10px;
+        }
+        div.cntWrap>ul>li:nth-child(odd).show+li{
+            height: 80px;
+        }
+
+
+        div.cntWrap.cntWrap01{
+            margin-top: 100px;
+        }
+        div.cntWrap.cntWrap01>div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup{
+            width: 400%;
+            height: 200px;
+            transition: margin-left 0.5s;
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article{
+            width: calc(100% / 12 - 20px);
+            height: 200px;
+            margin: 0px 10px;
+            float: left;
+            font-size: 30px;
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(1){
+            background-color: #fc0;
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(2){
+            background-color: rgb(119, 102, 35);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(3){
+            background-color: rgb(136, 133, 120);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(4){
+            background-color: rgb(141, 113, 0);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(5){
+            background-color: rgb(255, 230, 132);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(6){
+            background-color: rgb(255, 240, 179);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(7){
+            background-color: rgb(58, 46, 0);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(8){
+            background-color: rgb(65, 65, 65);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(9){
+            background-color: rgb(175, 175, 175);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(10){
+            background-color: rgb(187, 150, 0);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(11){
+            background-color: rgb(42, 34, 3);
+        }
+        div.cntWrap.cntWrap01>div.artView>div.artGroup>div.article:nth-child(12){
+            background-color: rgb(233, 233, 233);
+        }
+
+
+
+        div.cntWrap.cntWrap02{
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        div.cntWrap.cntWrap02>div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup{
+            width: 500%;
+            transition: margin-left 0.5s;
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup>div.article{
+            width: calc(100% / 5);
+            height: 500px;
+            float: left;
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup>div.article:nth-child(1){
+            background-color: #ccc;
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup>div.article:nth-child(2){
+            background-color: rgb(173, 173, 173);
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup>div.article:nth-child(3){
+            background-color: rgb(121, 121, 121);
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup>div.article:nth-child(4){
+            background-color: rgb(73, 73, 73);
+        }
+        div.cntWrap.cntWrap02>div.artView>div.artGroup>div.article:nth-child(5){
+            background-color: rgb(44, 44, 44);
+        }
+        div.cntWrap.cntWrap02>ul.paging{
+            width: 7%;
+            min-width: 114px;
+            text-align: center;
+            height: 40px;
+            margin: 0 auto;
+            margin-top: -20px;
+        }
+        div.cntWrap.cntWrap02>ul.paging>li{
+            width: 10px;
+            height: 10px;
+            background-color: #fc0;
+            float: left;
+            margin: 0px 5px;
+            border-radius: 5px;
+        }
+        div.cntWrap.cntWrap02>ul.paging>li.on{
+            width: 20px;
+        }
+
+
+        div.cntWrap.cntWrap03{
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        div.cntWrap.cntWrap03>div.content{
+            width: 80%;
+            max-width: 1080px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView{
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup{
+            width: 100%;
+            height: 600px;
+            transition: margin-top 0.5s;
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article{
+            width: calc(100% / 4 - 20px);
+            margin: 0 10px;
+            height: 200px;
+            float: left;
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(1){
+            background-color: #fc0;
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(2){
+            background-color: rgb(119, 102, 35);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(3){
+            background-color: rgb(136, 133, 120);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(4){
+            background-color: rgb(141, 113, 0);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(5){
+            background-color: rgb(255, 230, 132);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(6){
+            background-color: rgb(255, 240, 179);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(7){
+            background-color: rgb(58, 46, 0);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(8){
+            background-color: rgb(65, 65, 65);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(9){
+            background-color: rgb(175, 175, 175);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(10){
+            background-color: rgb(187, 150, 0);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(11){
+            background-color: rgb(42, 34, 3);
+        }
+        div.cntWrap.cntWrap03>div.content>div.artView>div.artGroup>div.article:nth-child(12){
+            background-color: rgb(233, 233, 233);
+        }
+        div.cntWrap.cntWrap03>div.content>ul.paging{
+            width: 10px;
+            height: 100px;
+            position: absolute;
+            margin: auto;
+            top: 0;bottom: 0;
+            right: 0;
+        }
+        div.cntWrap.cntWrap03>div.content>ul.paging>li{
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            margin: 5px 0px;
+            border-radius: 5px;
+        }
+        div.cntWrap.cntWrap03>div.content>ul.paging>li.onn{
+            height: 20px;
+        }
+
+
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('ul.arco>li').even().click(function(){
+                $('ul.arco>li').removeClass('show');
+                $(this).addClass('show');
+            });
+
+            var i = 0;
+            $('div.cntWrap.cntWrap01>button').first().click(function(){
+                i++;
+                if(i>=9){
+                    i=9;
+                    $('div.cntWrap.cntWrap01>button').first().css('opacity','0');
+                }else if(i>0){
+                    $('div.cntWrap.cntWrap01>button').last().css('opacity','1');
+                }
+                $('div.cntWrap.cntWrap01>div.artView>div.artGroup').css('margin-left',i*-33.33+'%');
+                console.log(i);
+            });
+            $('div.cntWrap.cntWrap01>button').last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                    $('div.cntWrap.cntWrap01>button').last().css('opacity','0');
+                }else if(i>0){
+                    $('div.cntWrap.cntWrap01>button').first().css('opacity','1');
+                }
+                $('div.cntWrap.cntWrap01>div.artView>div.artGroup').css('margin-left',i*-33.33+'%');
+                console.log(i);
+            });
+
+            $('.cntWrap02>ul.paging>li').click(function(){
+                var ind = $(this).index();
+                $('.cntWrap02>div.artView>div.artGroup').css('margin-left',ind*-100+'%');
+                $('.cntWrap02>ul.paging>li').removeClass('on')
+                $(this).addClass('on')
+                i=ind;
+            });
+
+            $('.cntWrap02>button').first().click(function(){
+                i++;
+                if(i>=4){
+                    i=4;
+                }
+                $('.cntWrap02>div.artView>div.artGroup').css('margin-left',i*-100+'%');
+                $('.cntWrap02>ul.paging>li').removeClass('on')
+                $('.cntWrap02>ul.paging>li').eq(i).addClass('on')
+            });
+            $('.cntWrap02>button').last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                $('.cntWrap02>div.artView>div.artGroup').css('margin-left',i*-100+'%');
+                $('.cntWrap02>ul.paging>li').removeClass('on')
+                $('.cntWrap02>ul.paging>li').eq(i).addClass('on')
+            });
+
+
+            $('.cntWrap03>div.content>ul.paging>li').click(function(){
+                var b = $(this).index();
+                $('.cntWrap03>div.content>div.artView>div.artGroup').css('margin-top',b*-200+'px');
+                $('.cntWrap03>div.content>ul.paging>li').removeClass('onn')
+                $(this).addClass('onn')
+                i=b;
+            });
+            $('.cntWrap03>button').first().click(function(){
+                i++;
+                if(i>=2){
+                    i=2;
+                }
+                $('.cntWrap03>div.content>div.artView>div.artGroup').css('margin-top',i*-200+'px');
+                $('.cntWrap03>div.content>ul.paging>li').removeClass('onn')
+                $('.cntWrap03>div.content>ul.paging>li').eq(i).addClass('onn')
+            });
+            $('.cntWrap03>button').last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                $('.cntWrap03>div.content>div.artView>div.artGroup').css('margin-top',i*-200+'px');
+                $('.cntWrap03>div.content>ul.paging>li').removeClass('onn')
+                $('.cntWrap03>div.content>ul.paging>li').eq(i).addClass('onn')
+            });
+            
+        });
+
+    </script>
+
+</head>
+<body>
+    <div class="cntWrap">
+        <ul class="arco">
+            <li class="show">title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat consequuntur non tempore sapiente nostrum temporibus laudantium voluptates, ratione voluptas, facilis veniam dolores optio assumenda sunt cupiditate error ducimus minima recusandae!</p></li>
+            <li>title</li>
+            <li><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, facere sit amet odit iure omnis saepe beatae natus! Autem praesentium cupiditate, atque perspiciatis eius accusamus recusandae consequatur enim similique ducimus.</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi, delectus iste optio enim in possimus ab repudiandae, pariatur ipsam quaerat, architecto nemo quibusdam iusto omnis inventore exercitationem praesentium totam.</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, ipsa explicabo magnam beatae sit, maiores laborum possimus modi ipsam nihil itaque libero saepe. Veniam molestiae dolorum vitae libero. Laborum, pariatur.</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae dolorem ipsa facere ullam optio ab, corrupti aperiam dignissimos recusandae temporibus saepe sequi, iure inventore repudiandae possimus debitis. Iusto, vitae tempora.</p></li>
+        </ul>
+    </div>
+
+
+    <div class="cntWrap cntWrap01">
+        <div class="artView">
+            <div class="artGroup">
+                <div class="article">1</div>
+                <div class="article">2</div>
+                <div class="article">3</div>
+                <div class="article">4</div>
+                <div class="article">5</div>
+                <div class="article">6</div>
+                <div class="article">7</div>
+                <div class="article">8</div>
+                <div class="article">9</div>
+                <div class="article">10</div>
+                <div class="article">11</div>
+                <div class="article">12</div>
+            </div>
+        </div>
+        <button>left</button>
+        <button>right</button>
+    </div>
+
+    <div class="cntWrap cntWrap02">
+        <div class="artView">
+            <div class="artGroup">
+                <div class="article">1</div>
+                <div class="article">2</div>
+                <div class="article">3</div>
+                <div class="article">4</div>
+                <div class="article">5</div>
+            </div>
+        </div>
+        <ul class="paging">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <button>left</button>
+        <button>right</button>
+    </div>
+
+    <div class="cntWrap cntWrap03">
+        <div class="content">
+            <div class="artView">
+                <div class="artGroup">
+                    <div class="article">1</div>
+                    <div class="article">2</div>
+                    <div class="article">3</div>
+                    <div class="article">4</div>
+                    <div class="article">5</div>
+                    <div class="article">6</div>
+                    <div class="article">7</div>
+                    <div class="article">8</div>
+                    <div class="article">9</div>
+                    <div class="article">10</div>
+                    <div class="article">11</div>
+                    <div class="article">12</div>
+                </div>
+            </div>
+            <ul class="paging">
+                <li class="onn"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>    
+        <button>up</button>
+        <button>down</button>
+    </div>
+
+
+</body>
+</html>

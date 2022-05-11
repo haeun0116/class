@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.cntWrap>ul.arco{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>ul.arco>li:nth-child(odd){
+            line-height: 40px;
+            height: 40px;
+            background-color: #fc0;
+            text-align: center;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        /* div.cntWrap>ul.arco>li:nth-child(odd).on+li{
+            height: 80px;
+        } */
+        div.cntWrap>ul.arco>li:nth-child(even){
+            height: 80px;
+            background-color: #333;
+            overflow: hidden;
+            /* transition: height 0.5s; */
+        }
+        div.cntWrap>ul.arco>li:nth-child(even)>p{
+            line-height: 20px;
+            width: calc(100% / 12 * 8);
+            margin: 0 auto;
+            color: #fff;
+            text-align: center;
+            padding-top: 10px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('ul.arco>li').even().click(function(){
+                $(this).next().slideToggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <ul class="arco">
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, alias iste dolorum perferendis veritatis recusandae nihil eligendi minima, ut ipsa obcaecati corporis? Expedita quisquam itaque nesciunt, asperiores ipsum ea nobis?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, alias iste dolorum perferendis veritatis recusandae nihil eligendi minima, ut ipsa obcaecati corporis? Expedita quisquam itaque nesciunt, asperiores ipsum ea nobis?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, alias iste dolorum perferendis veritatis recusandae nihil eligendi minima, ut ipsa obcaecati corporis? Expedita quisquam itaque nesciunt, asperiores ipsum ea nobis?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, alias iste dolorum perferendis veritatis recusandae nihil eligendi minima, ut ipsa obcaecati corporis? Expedita quisquam itaque nesciunt, asperiores ipsum ea nobis?</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, alias iste dolorum perferendis veritatis recusandae nihil eligendi minima, ut ipsa obcaecati corporis? Expedita quisquam itaque nesciunt, asperiores ipsum ea nobis?</p></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

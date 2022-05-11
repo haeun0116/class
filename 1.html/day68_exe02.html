@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .note{
+            width: 500px;
+            height: 500px;
+            background-color: #fc0;
+            padding: 100px;
+        }
+    </style>
+    <script src="./js/jQuery v1.11.1.js"></script>
+    <script src="./js/jquary_cookie.js"></script>
+    <script>
+        $(function(){
+            // $.cookie('may','on');
+            // 들어왔을 때 주는 이름과 할당되는 값 이 사이트를 보는 너는 메이고 너가 들어와서 보는 그 값은 온이야
+            console.log($.cookie('may')); 
+            $('button').last().click(function(){
+                $.cookie('may','on',{expires: 7});
+                //쿠키저장하는 유통기한이 7일이라는 말
+                $('.note').css({display: 'none'});
+            });
+            if($.cookie('may')){
+                $('.note').css({display: 'none'});
+            }else{
+                $('.note').css({display: 'block'});
+            }
+            $('button').first().click(function(){
+                $.cookie('may','on',{expires: -1});
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <div class="note">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt necessitatibus blanditiis officiis. Blanditiis soluta corporis, vel rerum mollitia odio labore autem delectus qui unde aliquam consequuntur necessitatibus eius, architecto pariatur.</p>
+    </div>
+    <button>쿠키삭제</button>
+    <button>그만보기</button>
+
+</body>
+</html>

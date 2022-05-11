@@ -1,0 +1,248 @@
+@mixin ff ($name,$url) {
+    @font-face {
+        font-family: #{$name};
+        src: url('../fonts/#{$url}') format('truetype');
+    }
+}
+@include ff('xe','xeicon.ttf');
+
+@mixin grid {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+@mixin df {
+    display: flex;
+    justify-content: space-between;
+}
+@mixin bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+$h2:#{'min(3.6em,36px)'};
+$lh:#{'min(1rem,40px)'};
+$plh:#{'min(0.5rem,20px)'};
+$p:#{'min(1.2em,12px)'};
+$h3:#{'min(2.4em,24px)'};
+$li:#{'min(1.4em,14px)'};
+$ll:#{'min(2rem,80px)'};
+
+
+html{
+    font-size: 3vw;
+    body{
+        font-family: 'xe';
+        font-size: 0.7vw;
+    }
+}
+
+.hdrWrap{
+    background: linear-gradient(90deg, #ff6f00 0%, #ff9800 100%);
+    header{
+        color: #fff;
+        @include grid;
+        line-height: $ll ;
+        @include df;
+        .hdrLeft{
+            @include df;
+            width: calc(100% / 12 * 7);
+            text-transform: uppercase;
+            h1{
+                font-size: #{'min(2em,20px)'};
+                font-weight: 700;
+            }
+            ul.nav{
+                font-size: $li;
+                width: calc(100% / 7 * 5.5);
+                @include df;
+            }
+        }
+        .hdrRight{
+            font-size: $li;
+        }
+    }
+}
+
+.navboxWrap{
+    background-color: #666;
+    .navBox{
+        @include grid;
+        color: #fff;
+        @include df;
+        padding: $lh 0;
+        ul.nav{
+            line-height: $lh;
+            font-size: $li;
+            li{
+                text-transform: capitalize;
+                font-size: $p;
+                &:nth-child(1){
+                    font-size: $li;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+ 
+.cntWrap{
+    margin-top: $ll;
+    .content{
+        @include grid;
+        header{
+            h2{
+                font-size: $h2;
+                line-height: $ll;
+                text-transform: capitalize;
+                text-align: center;
+                font-weight: 700;
+            }
+            p{
+                line-height: $plh;
+                font-size: $p;
+                height: $lh;
+                overflow: hidden;
+                margin: 0 auto;
+                text-align: center;
+            }
+        }
+        section{
+            margin-top: $ll;
+        }
+        &.cnt01{
+            header{
+                p{
+                    width: calc(100% / 12 * 4.5);
+                }
+            }
+            section{
+                overflow: hidden;
+                position: relative;
+                .artGroup{
+                    width: 268%;
+                    @include df;
+                    article{
+                        width: calc(100% / 8 - 20px);
+                        position: relative;
+                        .image{
+                            height: #{'min(8rem,360px)'};
+                            background-color: #999;
+                        }
+                        .texts{
+                            opacity: 0;
+                            @include df;
+                            h3{
+                                position: absolute;
+                                top: 0;
+                                left: -7%;
+                                font-size: #{'min(4.8em,48px)'};
+                                writing-mode: vertical-rl;
+                                font-weight: 700;
+                                text-transform: capitalize;
+                            }
+                            .txtLeft{
+                                width: calc(100% / 3.5 * 2.5);
+                                h5{
+                                    font-size: #{'min(1.4em,14px)'};
+                                    line-height: $lh;
+                                    font-weight: 700;
+                                }
+                                p{
+                                    font-size: #{'min(1.4em,14px)'};
+                                    line-height: $plh;
+                                    height: $lh;
+                                    overflow: hidden;
+                                    color: #555;
+                                }
+                            }
+                            .txtRight{
+                                width: calc(100% / 3.5);
+                                line-height: $lh;
+                                text-align: right;
+                                h4{
+                                    font-size: #{'min(1.4em,14px)'};
+                                }
+                                .sns{
+                                    i{
+                                        font-size: #{'min(2em,20px)'};
+                                    }
+                                }
+                            }
+                        }
+                        &:nth-child(2){
+                            .texts{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+                .btn{
+                    position: absolute;
+                    top: 0; bottom: 0;
+                    margin: auto;
+                    width: 100%;
+                    line-height: $lh;
+                    height: $lh;
+                    @include df;
+                    i{
+                        font-size: #{'min(4em,40px)'};
+                    }
+                }
+            }
+        }
+        &.cnt02{
+            header{
+                p{
+                    width: calc(100% / 12 * 4.5);
+                }
+            }
+            section{
+                article{
+                    .image{
+                        .ovrGrid{
+                            height: #{'min(10rem,400px)'};
+                            width: calc((100vw - 1080px) + 100%);
+                            min-width: calc((100vw - 80vw) + 100%);
+                            margin-left: calc((100vw - 1080px) / -2);
+                            background-color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ftrWrap{
+    background: linear-gradient(90deg, #323233 0%, #010202 50%, #323233 100%);
+    footer{
+        @include grid;
+        @include df;
+        color: #fff;
+        padding: $lh 0;
+        .ftrLeft{
+            width: calc(100% / 12);
+            h1{
+                font-size: #{'min(1.8em,18px)'};
+                line-height: $ll;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+        }
+        .ftrRight{
+            width: calc(100% / 12 * 6);
+            padding-top: $plh;
+            p{
+                font-size: $p;
+                line-height: $plh;
+                height: $lh;
+                overflow: hidden;
+                text-align: right;
+            }
+        }
+    }
+}

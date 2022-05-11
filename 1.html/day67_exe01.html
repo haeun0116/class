@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day67_exe01</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .cntWrap{
+            margin-top: 120px;
+        }
+        .content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        header h2{
+            font-size: 36px;
+            line-height: 80px;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        header p{
+            width: calc(100% / 12 * 4.5);
+            line-height: 20px;
+            height: 40px;
+            overflow: hidden;
+            font-size: 14px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        section{
+            margin-top: 80px;
+        }
+        section::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        article{
+            width: calc(50% - 20px);
+            float: left;
+            margin: 0 10px;
+        }
+        article:nth-child(2)~article{
+            margin-top: 40px;
+        }
+        .texts{
+            display: flex;
+            justify-content: space-between;
+            text-transform: capitalize;
+            font-size: 18px;
+        }
+        .bar{
+            margin-top: 10px;
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 5px;
+        }
+        .per{
+            height: 20px;
+            width: 0;
+            background-color: #3333ff;
+            border-radius: 5px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var ind=0, n=0;
+            $('article').mouseenter(function(){
+                ind=$(this).index();
+                n=$(this).find('h4 span').attr('data-num');
+                console.log(ind);
+                $({per:0}).animate({per:n},{
+                    duration:1000,
+                    progress:function(){
+                        console.log(this.per);
+                        $('span').eq(ind).text(parseInt(this.per));
+                        $('.per').eq(ind).css({width: parseInt(this.per)+'%'});
+                    }
+                });
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <header>
+                <h2>division title</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quam laborum facere pariatur necessitatibus dolor debitis ex impedit excepturi temporibus totam magni, aperiam explicabo nostrum deleniti sequi, sapiente minus cupiditate?</p>
+            </header>
+            <section>
+                <article>
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="80">0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </article>
+                <article>
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="70">0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </article>
+                <article>
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="90">0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </article>
+                <article>
+                    <div class="texts">
+                        <h4>segment</h4>
+                        <h4><span data-num="40">0</span>%</h4>
+                    </div>
+                    <div class="bar">
+                        <div class="per"></div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+    
+</body>
+</html>

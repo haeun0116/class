@@ -1,0 +1,77 @@
+div.cntWrap>div.artView{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+div.cntWrap>div.artView>div.artGroup{
+    width: 600%;
+    transition: margin-left 0.5s;
+}
+div.cntWrap>div.artView>div.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.artView>div.artGroup>div.article{
+    width: calc(100% / 6);
+    height: 500px;
+    font-size: 60px;
+    line-height: 500px;
+    text-align: center;
+    float: left;
+}
+div.cntWrap>div.artView>div.artGroup>div.article.a1{
+    background-color: indianred;
+}
+div.cntWrap>div.artView>div.artGroup>div.article.a2{
+    background-color: lightblue;
+}
+div.cntWrap>div.artView>div.artGroup>div.article.a3{
+    background-color: lightyellow;
+}
+div.cntWrap>div.artView>div.artGroup>div.article.a4{
+    background-color: aquamarine;
+}
+div.cntWrap>div.artView>div.artGroup>div.article.a5{
+    background-color: orange;
+}
+div.cntWrap>div.artView>div.artGroup>div.article.a6{
+    background-color: palegreen;
+}
+div.cntWrap>div.artView>ul.paging{
+    width: calc(100% / 12);
+    min-width: 225.48px;
+    height: 40px;
+    position: absolute;
+    bottom: 10px;
+    margin: auto;
+    left: 0;right: 0;
+}
+div.cntWrap>div.artView>ul.paging::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.artView>ul.paging>li{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #000;
+    float: left;
+    margin: 0px 5px;
+}
+div.cntWrap>div.artView>ul.paging>li.on{
+    width: 40px;
+}
+div.cntWrap>div.artView>div.btns{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    margin: auto;
+    top: 0;bottom: 0;
+}
+div.cntWrap>div.artView>div.btns>button:nth-child(2){
+    float: right;
+}

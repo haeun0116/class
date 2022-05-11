@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+       .parent{
+           width: 500px;
+           height: 500px;
+        }
+        .top{
+           display: flex;
+           justify-content: space-around;
+
+       }
+       .drag{
+           width: 100px;
+           height: 100px;
+           margin: 20px;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+        }
+        .drag.d1{
+            background-image: url('./images/im/cnt02_pic01.jpg');
+        }
+        .drag.d2{
+            background-image: url('./images/im/cnt02_pic02.jpg');
+        }
+        .drag.d3{
+            background-image: url('./images/im/cnt02_pic03.jpg');
+        }
+       .drop{
+           width: 400px;
+           height: 400px;
+           background-color: #ccc;
+           margin: 20px;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+       }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var bg=0;
+
+            $('.drag').draggable({
+                helper:'clone',
+                revert:true,
+                containment:'.parent',
+                drag:function(){
+                    bg = $(this).css('backgroundImage');
+                }
+            });
+            
+            $('.drop').droppable({
+                drop:function(){
+                    $('.drop').css({
+                        backgroundImage : bg
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="parent">
+        <div class="top">
+            <div class="drag d1"></div>
+            <div class="drag d2"></div>
+            <div class="drag d3"></div>
+        </div>
+        <div class="drop"></div>
+    </div>
+    
+</body>
+</html>

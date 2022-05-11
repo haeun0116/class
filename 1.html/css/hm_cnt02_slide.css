@@ -1,0 +1,270 @@
+div.cntWrap{
+    margin-top: 100px;
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt02>div.section .image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.cntWrap>div.content.cnt02 div.header>h2{
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: red;
+}
+/* 섹션 */
+div.cntWrap>div.content.cnt02 div.section{
+    width: 100%;
+    margin-top: 40px;
+}
+/* 아트탑 */
+div.cntWrap>div.content.cnt02 div.section>div.artTop{
+    position: relative;
+    width: 100%;
+    height: 440px;
+}
+div.cntWrap>div.content.cnt02 div.section>div.artTop>div.article{
+    float: left;
+    width: 100%;
+}
+div.cntWrap>div.content.cnt02 div.section>div.artTop>div.article::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 아트레프트 */
+div.cntWrap>div.content.cnt02 div.section>div.artTop>div.article>div.articleLeft{
+    width: 50%;
+    float: left;
+}
+div.cntWrap>div.content.cnt02 div.section>div.artTop>div.article>div.articleLeft>div.image>div.ovrGrid{
+    height: 440px;
+    background-color: #ccc;
+    width: calc((100vw - 1080px) / 2 + 100%); 
+    min-width: calc((100vw - 80vw) / 2 + 100%);
+    margin-left: calc((100vw - 1080px) / -2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/main_cnt2_i1.jpg');
+}
+/* 아트라이트 */
+div.cntWrap>div.content.cnt02 div.section>div.artTop>div.article>div.articleRight{
+    width: 45%;
+    float: left;
+    padding: 40px 20px ;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt02 div.section>div.artTop>div.article>div.articleRight::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>div.texts>h5{
+    line-height: 20px;
+    padding-bottom: 15px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup{
+    width: 210%;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art{
+    float: left;
+    width: calc(100% / 2);
+    margin-top: 10px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art>.texts{
+    padding-left: 10px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art h3{
+    transition: all 0.5s;
+    font-size: 20px;
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art h5{
+    font-size: 14px;
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight:hover>.artGroup>.art h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art>div.images{
+    width: 100%;
+    margin-top: 20px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art>div.images::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art>div.images>div.image{
+    width: calc(100% / 2 - 20px);
+    margin: 0px 10px;
+    height: 200px;
+    background-color: #ccc;
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art.a1>div.images>div.image.i1{
+    background-image: url('../images/main_cnt2_i2.jpg');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art.a1>div.images>div.image.i2{
+    background-image: url('../images/main_cnt2_i3.jpeg');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art.a2>div.images>div.image.i1{
+    background-image: url('../images/main_cnt2_a2_i1.jpg');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>.artGroup>.art.a2>div.images>div.image.i2{
+    background-image: url('../images/main_cnt2_a2_i2.webp');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.btn{
+    width: 10%;
+    height: 440px;
+    line-height: 440px;
+    position: absolute;
+    margin: auto;
+    top: 0;bottom: 0;
+    right: 0;
+    text-align: right;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.btn>i{
+    font-size: 60px;
+    color: #f00;
+    font-weight: 700;
+}
+
+
+
+
+
+/* 아트바텀 */
+div.cntWrap>div.content div.section>div.artBtm{
+    position: relative;
+    width: 100%;
+    height: 440px;
+}
+div.cntWrap>div.content div.section>div.artBtm>div.article{
+    float: right;
+    width: 100%;
+}
+div.cntWrap>div.content div.section>div.artBtm>div.article::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 아트라이트 */
+div.cntWrap>div.content div.section>div.artBtm>div.article>div.articleRight{
+    width: 50%;
+    float: right;
+}
+div.cntWrap>div.content div.section>div.artBtm>div.article>div.articleRight>div.image>div.ovrGrid{
+    height: 440px;
+    background-color: #ccc;
+    width: calc((100vw - 1080px) / 2 + 100%); 
+    min-width: calc((100vw - 80vw) / 2 + 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/main_cnt2_i4.jpg');
+}
+/* 아트레프트 */
+div.cntWrap>div.content div.section>div.artBtm>div.article>div.articleLeft{
+    width: 45%;
+    float: left;
+    padding: 40px 20px ;
+    overflow: hidden;
+    margin-left: calc(100% / 12 * 0.4);
+}
+div.cntWrap>div.content div.section>div.artBtm>div.article>div.articleLeft::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>div.texts>h5{
+    line-height: 20px;
+    padding-bottom: 15px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup{
+    width: 210%;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art{
+    float: left;
+    width: calc(100% / 2);
+    margin-top: 10px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art>.texts{
+    padding-right: 10px;
+    text-align: right;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art h3{
+    transition: all 0.5s;
+    font-size: 20px;
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art h5{
+    font-size: 14px;
+    line-height: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft:hover>.artGroup>.art h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art>div.images{
+    width: 100%;
+    margin-top: 20px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art>div.images::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art>div.images>div.image{
+    width: calc(100% / 2 - 20px);
+    margin: 0px 10px;
+    height: 200px;
+    background-color: #ccc;
+    float: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art.a1>div.images>div.image.i1{
+    background-image: url('../images/main_cnt2_i5.jpeg');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art.a1>div.images>div.image.i2{
+    background-image: url('../images/main_cnt2_i6.jfif');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art.a2>div.images>div.image.i1{
+    background-image: url('../images/main_cnt2B_a2_i1.webp');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>.artGroup>.art.a2>div.images>div.image.i2{
+    background-image: url('../images/main_cnt2B_a2_i2\ .webp');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.btn{
+    width: 10%;
+    height: 440px;
+    line-height: 440px;
+    position: absolute;
+    margin: auto;
+    top: 0;bottom: 0;
+    left: 0;
+    text-align: left;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.btn>i{
+    font-size: 60px;
+    color: #f00;
+    font-weight: 700;
+}

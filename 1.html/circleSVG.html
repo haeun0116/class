@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div{
+            margin: 100px;
+            width: 320px;
+            height: 320px;
+            position: relative;
+        }
+        svg{
+            width: 320px;
+            height: 320px;
+        }
+        circle{
+            stroke: crimson;
+            fill: transparent;
+            stroke-width: 10;
+            stroke-dasharray: 943;
+            stroke-dashoffset: 943;
+            transform: rotate(-90deg);
+            transform-origin: 50%;
+            stroke-linecap: round;
+        }
+        h2{
+            text-align: center;
+            line-height: 320px;
+            font-size: 20px;
+            position: absolute;
+            margin: auto;
+            top: 0;bottom: 0;left: 0;right: 0;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var n=0, percent=0;
+            $('div').mouseenter(function(){
+                // ind=$(this).index();
+                n=$(this).find('span').attr('data-num');
+                $({per:0}).animate({per:n},{
+                    duration:1000,
+                    progress:function(){
+                        percent = 943 - ((943 * this.per) / 100);
+                        $('circle').css('stroke-dashoffset', percent);
+                        $('span').text(parseInt(this.per));
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <svg>
+            <circle cx="160" cy="160" r="150"></circle>
+        </svg>
+        <h2><span data-num="80">0</span>%</h2>
+    </div>
+    
+</body>
+</html>

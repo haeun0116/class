@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        body{
+            overflow-y: hidden;
+        }
+        div{
+            width: 100vw;
+            height: 100vh;
+            font-size: 100px;
+            text-align: center;
+        }
+        div:nth-child(1){
+            background-color: aqua;
+        }
+        div:nth-child(2){
+            background-color: darkgoldenrod;
+        }
+        div:nth-child(3){
+            background-color: indianred;
+        }
+        div:nth-child(4){
+            background-color: khaki;
+        }
+        div:nth-child(5){
+            background-color: lightpink;
+        }
+    </style>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var loc=[];
+    
+            for(var i=0; i<$('body>div').length; i++){
+                loc[i] =$('body>div').eq(i).offset().top;
+                // console.log(loc);
+            }
+            
+            var c=0;
+            var flag = true;
+            $(window).on('mousewheel',function(e){
+                var w=e.originalEvent.wheelDelta;
+                // 마우스 휠의 위치 값
+                if(flag){
+                    if(w<0){
+                        c++;
+                    }else if(w>0){
+                        c--;
+                    }
+                    flag = false;
+                    $('html').animate({scrollTop:loc[c]},1000,'easeOutBounce',function(){
+                        flag=true;
+                    });
+                }
+                if(c>=4){
+                    c=4;
+                }else if(c<=0){
+                    c=0;
+                }
+                console.log(c);
+            });
+        });
+        
+    </script>
+</head>
+<body>
+    <!-- 페이지별로 나눠놓고 작업해야 함 -->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    
+</body>
+</html>

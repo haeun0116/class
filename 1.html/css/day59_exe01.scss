@@ -1,0 +1,342 @@
+
+@mixin ff ($fontName,$url) {
+    @font-face{
+        font-family: '#{$fontName}';
+        src: url('../fonts/#{$url}') format('truetype');
+    }  
+}
+@include ff(xe,'xeicon.ttf');
+@include ff(bask,'BASKVILL.ttf');
+@include ff(dodum,'GowunDodum-Regular.ttf');
+
+
+$h2:#{'min(3.6em,36px)'};
+$lh:#{'min(1rem,40px)'};
+$plh:#{'min(0.5rem,20px)'};
+$p:#{'min(1.2em,12px)'};
+$h3:#{'min(2.4em,24px)'};
+$li:#{'min(1.4em,14px)'};
+$ll:#{'min(2rem,80px)'};
+
+
+@mixin bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin grid($dev){
+    @if($dev=='mob'){
+        width: 90%;
+        max-width: 700px;
+        background-color: #fc0;
+    }
+    @else{
+        width: 80%;
+        max-width: 1080px;
+        background-color: #f00;
+    }
+    margin: 0 auto;
+}
+@mixin df {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+html{
+    font-size: 3vw;
+    body{
+        font-size: 0.7vw;
+        font-family: 'xe';
+    }
+}
+
+.hdrWrap{
+    background: linear-gradient(90deg, #ff6700 0%, #ff8200 50%, #ff9900 100%);
+    header{
+        @include grid('pc');
+        color: #fff;
+        @include df;
+        h1{
+            font-size: #{'min(4em,40px)'};
+            line-height: $ll;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        ul.nav{
+            width: calc(100% / 12 * 7);
+            @include df;
+            li{
+                font-size: $li;
+                line-height: $ll;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.mainWrap{
+    background-color: #bbb;
+    main{
+        @include grid('pc');
+        // padding: 240px 0px 360px;
+        padding: #{'min(6rem,240px)'} 0px #{'min(8rem,360px)'};
+        .texts{
+            h2{
+                font-size: #{'min(7.2em,72px)'};
+                line-height: $ll;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            p{
+                margin-top: #{'min(1rem,40px)'};
+                width: calc(100% / 12 * 6.5);
+                line-height: $lh;
+                font-size: #{'min(2.4em,24px)'};
+                height: #{'min(3rem,120px)'};
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.cntWrap{
+    margin-top: #{'min(3rem,120px)'};
+    .content{
+        @include grid('pc');
+        header{
+            text-align: center;
+            h2{
+                font-size: $h2;
+                line-height: $ll;
+                font-weight: 700;
+            }
+            p{
+                font-size: $p;
+                line-height: $plh;
+                height: #{'min(1rem,40px)'};
+                overflow: hidden;
+                margin: 0 auto;
+            }
+        }
+        section{
+            margin-top: $ll;
+            article{
+                .texts{
+                    h3{
+                        font-size: $h3;
+                        line-height: $lh;
+                    }
+                }
+                .image{
+                    background-color: #ccc;
+                }
+            }
+        }
+        &.cnt01{
+            header{
+                p{
+                    width: calc(100% / 12 * 4.5);
+                }
+            }
+            section{
+                @include df;
+                article{
+                    width: calc(100% / 4 - 20px);
+                    .image{
+                        height: #{'min(4.5rem,180px)'};
+                        @include bg;
+                        @for $i from 1 through 4 {
+                            &.i#{$i}{
+                                background-image: url('../images/im/test_pic0#{$i}.jpg');
+                            }
+                        }
+                    }
+                    .texts{
+                        padding: #{'min(1rem,40px)'} #{'min(1rem,40px)'};
+                        ul li{
+                            font-size: $li;
+                            line-height: $plh;
+                            &::before{
+                                content: '- ';
+                                display: inline;
+                            }
+                        }
+                        .sns{
+                            text-align: right;
+                            font-size: #{'min(2em,20px)'};
+                            margin-top: #{'min(1em,10px)'};
+                        }
+                    }
+                }
+            }
+        }
+        &.cnt02{
+            header{
+                p{
+                    width: calc(100% / 12 * 4.5);
+                }
+            }
+            section{
+                @include df;
+                .artLeft{
+                    width: calc(100% / 12 * 4);
+                    .article{
+                        margin-top: $lh;
+                        @include df;
+                        .image{
+                            width: calc(100% / 4);
+                            border-radius: 50%;
+                            height: $ll;
+                            @include bg;
+                            @for $im from 1 through 3{
+                                &.i#{$im}{
+                                    background-image: url('../images/im/cnt02_pic0#{$im}.jpg');
+                                }
+                            }
+                        }
+                        .texts{
+                            width: calc(100% / 4 * 2.8);
+                            h3{
+                                font-size: $h3;
+                                line-height: $lh;
+                                font-weight: 700;
+                                text-transform: capitalize;
+                            }
+                            p{
+                                line-height: $plh;
+                                font-size: $p;
+                                overflow: hidden;
+                                height: $lh;
+                                padding-right: 20px;
+                            }
+                        }
+                    }
+                }
+                .artMid{
+                    width: calc(100% / 12 * 4);
+                    .article{
+                        .image{
+                            height: #{'min(10rem,400px)'};
+                            @include bg;
+                            background-image: url('../images/im/norway-gd735035dc_1280.jpg');
+                        }
+                    }
+                }
+                .artRight{
+                    width: calc(100% / 12 * 4);
+                    .article{
+                        @include df;
+                        margin-top: $lh;
+                        direction: rtl;
+                        .image{
+                            width: calc(100% / 4);
+                            @include bg;
+                            @for $im from 4 through 6 {
+                                &.i#{$im}{
+                                    background-image: url('../images/im/cnt02_pic0#{$im}.jpg');
+                                }
+                            }
+                            border-radius: 50%;
+                        }
+                        .texts{
+                            width: calc(100% / 4 * 2.9);
+                            h3{
+                                font-size: $h3;
+                                line-height: $lh;
+                                text-transform: capitalize;
+                                font-weight: 700;
+                            }
+                            p{
+                                font-size: $p;
+                                line-height: $plh;
+                                height: $lh;
+                                overflow: hidden;
+                                padding-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bnrWrap{
+    margin-top: 120px;
+    background: linear-gradient(90deg,#353535 0%, #616161 50%, #343434 100%);
+    .banner{
+        padding: $ll 0px;
+        @include grid('pc');
+        @include df;
+        .image{
+            width: calc(100% / 6 - 20px);
+            border-radius: 50%;
+            height: #{'min(4rem,120px)'};
+            @include bg;
+            @for $im from 1 through 6 {
+                &.i#{$im}{
+                    background-image: url('../images/im/bnr_pic0#{$im}.jpg');
+                }
+            }
+        }
+    }
+}
+
+.ftrWrap{
+    background-color: #151415;
+    margin-top: #{'min(3rem,120px)'};
+    footer{
+        @include df;
+        @include grid('pc');
+        color: #fff;
+        padding: $ll 0px;
+        .ftrLeft{
+            width: calc(100% / 12 * 3);
+            h1{
+                font-size: #{'min(1.6em,16px)'};
+                line-height: $lh;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            .sns{
+                font-size: $h3;
+                line-height: $ll;
+            }
+            h4{
+                font-size: $p;
+                line-height: $lh;
+            }
+        }
+        .ftrRight{
+            width: calc(100% / 12 * 5);
+            ul.nav{
+                @include df;
+                li{
+                    font-size: $li;
+                    line-height: $lh;
+                    text-transform: uppercase;
+                }
+            }
+            h4{
+                width: calc(100% / 5 * 3.5);
+                margin-left: auto;
+                text-align: center;
+                font-size: $li;
+                margin-top: $ll;
+                line-height: $lh;
+                background-color: #999;
+                border-radius: 20px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) and (min-width:0px){ 
+    .cntWrap{
+        .content{
+            @include grid('mob');
+        }
+    }
+ }

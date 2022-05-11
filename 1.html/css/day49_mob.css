@@ -1,0 +1,22 @@
+div.cntWrap>div.artView>div.artGroup{
+    width: 600%;
+}
+div.cntWrap>div.artView>div.artGroup>div.article{
+    height: 200px;
+    line-height: 200px;
+    font-size: 40px;
+}
+div.cntWrap>div.artView>ul.paging{
+    width: calc(100% / 12 * 3.3);
+    bottom: 0;
+    height: 20px;
+    min-width: 96.52px;
+}
+div.cntWrap>div.artView>ul.paging>li{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+div.cntWrap>div.artView>ul.paging>li.on{
+    width: 20px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jQuery v1.11.1.js"></script>
+    <script>
+        var insa ='안녕하세요';
+        var t=0;
+        // console.log(insa[4]); 이렇게 가져오면 알아서 순서대로 가져와 줌
+        // setTimeout(function(){
+        //     console.log(insa[0]);
+        // },500);
+        // setTimeout(function(){
+        //     console.log(insa[1]);
+        // },1000);
+        // setTimeout(function(){
+        //     console.log(insa[2]);
+        // },1500);
+        // setTimeout(function(){
+        //     console.log(insa[3]);
+        // },2000);
+        // setTimeout(function(){
+        //     console.log(insa[4]);
+        // },2500);
+        for(var i=0; i<insa.length; i++){
+            setTimeout(function(){
+                console.log(insa[t]);
+                t++;
+            },i*500);
+        }
+
+        for(var i=0; i<h1.length; i++){
+            setTimeout(function(){
+                console.log(insa[t]);
+                t++;
+            },i*500);
+        }
+
+        $(function(){
+            $('button').first().click(function(){
+                $('video').get(0).play();
+                // 비디오엔 겟이라는 함수를 꼭 붙여줘야 하고 겟함수에는 0 파라미터가 꼭 들어와야 함
+            });
+            $('button').last().click(function(){
+                $('video').get(0).pause();
+            });
+        });
+
+
+    </script>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+
+    <video src="./video/Lemon - 82602.mp4"></video>
+    <button>재생</button>
+    <button>일시정지</button>
+</body>
+</html>

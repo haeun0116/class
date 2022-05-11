@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.cntWrap.cnt01{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap.cnt01>ul.acordian{
+            width: 100%;
+        }
+        div.cntWrap.cnt01>ul.acordian>li:nth-child(odd){
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        div.cntWrap.cnt01>ul.acordian>li:nth-child(even){
+            width: 100%;
+            height: 0px;
+            background-color: #ccc;
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+        div.cntWrap.cnt01>ul.acordian>li:nth-child(even)>p{
+            line-height: 20px;
+            height: 40px;
+            font-size: 14px;
+            overflow: hidden;
+            margin: 10px;
+            text-align: center;
+        }
+        div.cntWrap.cnt01>ul.acordian>li:nth-child(odd).show+li{
+            height: 80px;
+        }
+
+
+        div.cntWrap{
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+
+        div.cntWrap.cnt02>div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        div.cntWrap.cnt02>div.artView>div.artGroup{
+            width: 400%;
+            height: 200px;
+            transition: margin-left 0.5s;
+        }
+        div.cntWrap.cnt02>div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap.cnt02>div.artView>div.artGroup>div.article{
+            width: calc(100% / 12 - 20px);
+            height: 200px;
+            margin: 0px 10px;
+            float: left;
+            text-align: center;
+            font-size: 40px;
+            line-height: 200px;
+            font-weight: 700;
+            background-color: #ccc;
+        }
+
+
+        div.cntWrap.cnt03>div.section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            height: 200px;
+        }
+        div.cntWrap.cnt03>div.section>div.artView{
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        div.cntWrap.cnt03>div.section>div.artView>div.artGroup{
+            width: 500%;
+            transition: margin-left 0.5s;
+        }
+        div.cntWrap.cnt03>div.section>div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap.cnt03>div.section>div.artView>div.artGroup>div.article{
+            width: calc(100% / 5);
+            height: 200px;
+            font-size: 40px;
+            line-height: 200px;
+            text-align: center;
+            font-weight: 700;
+            background-color: #ccc;
+            float: left;
+        }
+        div.cntWrap.cnt03>div.section>ul.paging{
+            width: 19%;
+            height: 20px;
+            min-width: 70px;
+            margin: 0 auto;
+            margin-top: -25px;
+        }
+        div.cntWrap.cnt03>div.section>ul.paging::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap.cnt03>div.section>ul.paging>li{
+            width: 15px;
+            height: 15px;
+            border-radius: 5px;
+            margin: 5px;
+            background-color: #000;
+            float: left;
+        }
+        div.cntWrap.cnt03>div.section>ul.paging>li.on{
+            width: 30px;
+        }
+
+        div.cntWrap.cnt04{}
+        div.cntWrap.cnt04>div.section{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            height: 200px;
+            position: relative;
+        }
+        div.cntWrap.cnt04>div.section>div.artView{
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        div.cntWrap.cnt04>div.section>div.artView>div.artGroup{
+            width: 100%;
+            height: 800px;
+            transition: margin-top 0.5s;
+        }
+        div.cntWrap.cnt04>div.section>div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.cntWrap.cnt04>div.section>div.artView>div.artGroup>div.article{
+            width: calc(100% / 3 - 20px);
+            margin: 0px 10px;
+            float: left;
+            height: 200px;
+            background-color: #ccc;
+            line-height: 200px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        div.cntWrap.cnt04>div.section>ul.paging{
+            width: 20px;
+            height: 100px;
+            position: absolute;
+            margin: auto;
+            top: 0;bottom: 0;
+            right: 0;
+        }
+        div.cntWrap.cnt04>div.section>ul.paging>li{
+            width: 15px;
+            height: 15px;
+            border-radius: 5px;
+            margin: 5px;
+            background-color: #000;
+        }
+        div.cntWrap.cnt04>div.section>ul.paging>li.on{
+            height: 30px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            $('.cnt01>ul.acordian>li').first().css({
+                    'background-color':'#fc0',
+                    'color':'#000'
+                });
+            $('.cnt01>ul.acordian>li').even().click(function(){
+                $('.cnt01>ul.acordian>li').removeClass('show');
+                $(this).addClass('show');
+                $('.cnt01>ul.acordian>li').even().css({
+                    'background-color':'#000',
+                    'color':'#fff'
+                });
+                $(this).css({
+                    'background-color':'#fc0',
+                    'color':'#000'
+                });
+            });
+
+            i=0;
+            $('.cnt02>button').first().click(function(){
+                i++;
+                if(i>=9){
+                    i=9;
+                    $('.cnt02>button').first().css('opacity','0');
+                }else if(i>0){
+                    $('.cnt02>button').last().css('opacity','1');
+                }
+                $('.cnt02>div.artView>div.artGroup').css('margin-left',i*-33.33+'%');
+                console.log(i);
+            });
+            $('.cnt02>button').last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                    $('.cnt02>button').last().css('opacity','0');
+                }else if(i<9){
+                    $('.cnt02>button').first().css('opacity','1');
+                }
+                $('.cnt02>div.artView>div.artGroup').css('margin-left',i*-33.33+'%');
+            });
+
+            $('.cnt03>div.section>ul.paging>li').click(function(){
+                var ind = $(this).index();
+                $('.cnt03>div.section>div.artView>div.artGroup').css('margin-left',ind*-100+'%');
+                $('.cnt03>div.section>ul.paging>li').removeClass('on');
+                $(this).addClass('on');
+                i=ind
+            });
+            $('.cnt03>button').first().click(function(){
+                i++;
+                if(i>=4){
+                    i=4;
+                }
+                $('.cnt03>div.section>div.artView>div.artGroup').css('margin-left',i*-100+'%');
+                $('.cnt03>div.section>ul.paging>li').removeClass('on');
+                $('.cnt03>div.section>ul.paging>li').eq(i).addClass('on');
+            });
+            $('.cnt03>button').last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                $('.cnt03>div.section>div.artView>div.artGroup').css('margin-left',i*-100+'%');
+                $('.cnt03>div.section>ul.paging>li').removeClass('on');
+                $('.cnt03>div.section>ul.paging>li').eq(i).addClass('on');
+            });
+
+            $('.cnt04>div.section>ul.paging>li').click(function(){
+                var ind = $(this).index();
+                $('.cnt04>div.section>div.artView>div.artGroup').css('margin-top',ind*-200+'px');
+                $('.cnt04>div.section>ul.paging>li').removeClass('on');
+                $(this).addClass('on');
+            });
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+    <div class="cntWrap cnt01">
+        <ul class="acordian">
+            <li class="show">title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel numquam ea doloribus beatae corporis provident saepe quaerat incidunt. Minus velit minima voluptatum fuga, earum vel et ducimus itaque impedit consequatur.</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel numquam ea doloribus beatae corporis provident saepe quaerat incidunt. Minus velit minima voluptatum fuga, earum vel et ducimus itaque impedit consequatur.</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel numquam ea doloribus beatae corporis provident saepe quaerat incidunt. Minus velit minima voluptatum fuga, earum vel et ducimus itaque impedit consequatur.</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel numquam ea doloribus beatae corporis provident saepe quaerat incidunt. Minus velit minima voluptatum fuga, earum vel et ducimus itaque impedit consequatur.</p></li>
+            <li>title</li>
+            <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel numquam ea doloribus beatae corporis provident saepe quaerat incidunt. Minus velit minima voluptatum fuga, earum vel et ducimus itaque impedit consequatur.</p></li>
+        </ul>
+    </div>
+
+    <div class="cntWrap cnt02">
+        <div class="artView">
+            <div class="artGroup">
+                <div class="article">1</div>
+                <div class="article">2</div>
+                <div class="article">3</div>
+                <div class="article">4</div>
+                <div class="article">5</div>
+                <div class="article">6</div>
+                <div class="article">7</div>
+                <div class="article">8</div>
+                <div class="article">9</div>
+                <div class="article">10</div>
+                <div class="article">11</div>
+                <div class="article">12</div>
+            </div>
+        </div>
+        <button>left</button>
+        <button>right</button>
+    </div> 
+
+    <div class="cntWrap cnt03">
+        <div class="section">
+            <div class="artView">
+                <div class="artGroup">
+                    <div class="article">1</div>
+                    <div class="article">2</div>
+                    <div class="article">3</div>
+                    <div class="article">4</div>
+                    <div class="article">5</div>
+                </div>
+            </div>    
+            <ul class="paging">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <button>left</button>
+        <button>right</button>
+    </div>
+
+    <div class="cntWrap cnt04">
+        <div class="section">
+            <div class="artView">
+                <div class="artGroup">
+                    <div class="article">1</div>
+                    <div class="article">2</div>
+                    <div class="article">3</div>
+                    <div class="article">4</div>
+                    <div class="article">5</div>
+                    <div class="article">6</div>
+                    <div class="article">7</div>
+                    <div class="article">8</div>
+                    <div class="article">9</div>
+                    <div class="article">10</div>
+                    <div class="article">11</div>
+                    <div class="article">12</div>
+                </div>
+            </div>    
+            <ul class="paging">
+                <li class="on"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,349 @@
+div.hdrWrap>div.header>div.hdrRight>ul.icons>li{
+  font-size: 14px;
+}
+div.navboxWrap>div.navBox>ul.nav{
+  font-size: 12px;
+}
+div.navboxWrap>div.navBox>ul.nav>li{
+  line-height: 20px;
+}
+
+div.mainWrap{
+  height: 440px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/main_mob_main.jfif');
+}
+div.mainWrap>div.main{
+  width: 90%;
+  padding-top: 360px;
+  padding-bottom: 40px;
+}
+div.mainWrap>div.main>h2{
+  display: block;
+  color: #fff;
+  line-height: 20px;
+  font-size: 18px;
+}
+div.mainWrap>div.main>h5{
+  display: block;
+  color: #fff;
+  line-height: 20px;
+  font-size: 10px;
+}
+div.mainWrap>div.main>ul.btn{
+  display: block;
+  width: calc(100% / 4 * 0.9 );
+  height: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+div.mainWrap>div.main>ul.btn>li{
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  float: left;
+  border-radius: 5px;
+  margin: 0px 2px;
+}
+div.mainWrap>div.main>ul.btn>li.on{
+  width: 20px;
+}
+
+
+
+
+div.cntWrap{
+  margin-top: 40px;
+}
+div.cntWrap>div.content{
+  width: 90%;
+}
+
+
+
+div.cntWrap:nth-child(5){
+  margin-top: 20px;
+}
+div.cntWrap>div.content.cnt01{
+  position: relative;
+  /* outline: 2px solid red; */
+}
+div.cntWrap>div.content.cnt01>div.header>div.btn{
+  width: 100%;
+  height: 100px;
+  font: 20px;
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  top: -35%;
+  left: 0;
+  right: 0;
+}
+div.cntWrap>div.content.cnt01>div.header>div.btn>i{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: inherit;
+  border-radius: inherit;
+  padding: inherit;
+  color: red;
+  font-size: 24px;
+  /* outline: 1px solid green; */
+}
+div.cntWrap>div.content.cnt01>div.header>div.btn>i:nth-child(1){
+  margin: auto;
+  bottom: 0;
+  top: 0;
+  left: 0;
+}
+div.cntWrap>div.content.cnt01>div.header>div.btn>i:nth-child(2){
+  margin: auto;
+  bottom: 0;
+  top: 0;
+  right: 0;
+}
+div.cntWrap>div.content.cnt01>div.section{
+  padding: 0px 10px 0px 13px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article{
+  width: calc(100% / 3 - 20px);
+  margin: 0px 10px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image{
+  height: 85px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image.i1{
+  background-image: url('../images/main_cnt1_mob_i1.jpg');
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image.i2{
+  background-image: url('../images/main_cnt1_mob_i2.jpg');
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image.i3{
+  background-image: url('../images/main_cnt1_mob_i3.jpg');
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image.i4{
+  background-image: url('../images/main_cnt1_mob_i4.jpg');
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>div.image:nth-child(2){
+  margin: 0px 10px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.article>h3{
+  background-color: #fff;
+  color: #000;
+  margin-top: 0;
+  font-size: 10px;
+}
+
+div.cntWrap>div.content.cnt02>div.header>h2{
+  display: none;
+}
+div.cntWrap>div.content.cnt02>div.section div.article>div.btn{
+  display: none;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop{
+  width: 100%;
+  height: 400px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.art.Btm{
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>div.texts{
+  display: block;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>div.texts{
+  display: block;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleLeft{
+  width: 100%;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleLeft>div.image{
+  width: 100%;
+  height: 400px;
+  margin-left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/main_mob_cnt2_i1.jfif');
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight{
+  width: 100%;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>div.texts{
+  width: 100%;
+  padding: 0px 0px 0px 10px;
+  margin-top: -60px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>div.texts>h3{
+  font-size: 14px;
+  line-height: 20px;
+  color: red;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artTop>div.article>div.articleRight>div.texts>h5{
+  font-size: 12px;
+  line-height: 20px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleRight{
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  position: relative;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleRight>div.image{
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/main_mob_cnt2_i2.jfif');
+  position: absolute;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>div.texts{
+  width: 100%;
+  height: 40px;
+  padding: 0px 0px 0px 10px;
+  text-align-last: left;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  z-index: 1;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft{
+  width: 100%;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>div.texts>h3{
+  font-size: 14px;
+  line-height: 20px;
+  color: red;
+}
+div.cntWrap>div.content.cnt02>div.section>div.artBtm>div.article>div.articleLeft>div.texts>h5{
+  font-size: 12px;
+  line-height: 20px;
+}
+
+
+div.bnrWrap.bnrWrap01{
+  margin-top: 40px;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01{
+  width: 90%;
+  position: relative;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>div.images{
+  height: 280px;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>div.texts{
+  margin-top: 0px;
+  position: inherit;
+  text-align: center;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>div.texts>h2{
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+  margin-top: 10px;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>div.texts>p{
+  display: block;
+  font-size: 12px;
+  width: calc(100% / 4 * 2);
+  line-height: 20px;
+  height: 40px;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>ul.btn{
+  width: calc(100% / 4);
+  position: absolute;
+  bottom: 21%;
+  left: 39%;
+}
+div.bnrWrap.bnrWrap01>div.banner.bnr01>ul.btn>li{
+  width: 10px;
+  height: 10px;
+}
+
+div.cntWrap>div.content.cnt03>div.header>h2{
+  display: none;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article:nth-child(1)~div.article{
+  display: none;
+}
+div.cntWrap>div.content.cnt03>div.section{
+  position: relative;
+  width: 100%;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article{
+  width: 100%;
+  margin: 0px;
+  position: relative;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.images.i1{
+  height: 400px;
+  width: 100vw;
+  margin-left: calc((100vw - 90vw) / -2);
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.images>div.image.i1{
+  width: calc(100% / 4 * 2);
+  margin: 0 auto;
+  height: 400px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.article>div.texts>h3{
+  width: calc(100% / 4 * 2);
+  position: absolute;
+  top: 0;
+  left: 22%;
+  font-weight: 700;
+}
+div.cntWrap>div.content.cnt03>div.section>div.btn{
+  display: block;
+  color: red;
+  font-size: 44px;
+  line-height: 50px;
+  width: calc(100% / 4 * 3);
+  height: 50px;
+  position: absolute;
+  margin: auto;
+  top: 0; bottom: 0;right: 0;left: 0;
+
+}
+div.cntWrap>div.content.cnt03>div.section>div.btn>i:nth-child(1){
+  float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.btn>i:nth-child(2){
+  float: right;
+}
+
+
+
+
+
+div.ftrWrap{
+  margin-top: 0px;
+}
+div.ftrWrap>div.footer>div.ftrTop>div.social>div.texts>h4:nth-child(1){
+  font-size: 12px;
+  line-height: 20px;
+}
+div.ftrWrap>div.footer>div.ftrTop>div.social>div.texts>h4{
+  font-size: 10px;
+  line-height: 20px;
+}
+div.ftrWrap>div.footer>div.ftrTop>div.social>div.sns{
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+div.ftrWrap>div.footer>div.ftrBtm{
+  margin-top: 20px;
+}
+div.ftrWrap>div.footer>div.ftrBtm>p{
+  width: 80%;
+  height: 80px;
+  overflow: hidden;
+}

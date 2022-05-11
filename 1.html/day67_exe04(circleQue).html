@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day67_exe04(circleQue)</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .wrap{
+            margin-top: 100px;
+            margin-left: 50px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .cir{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            outline: 1px solid #000;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+        }
+        .cir>div{
+            width: 50%;
+            overflow: hidden;
+        }
+        .left>.per{
+            height: 200px;
+            width: 100%;
+            transform: rotate(180deg);
+            transform-origin: right;
+        }
+        .right>.per{
+            height: 200px;
+            width: 100%;
+            transform-origin: right;
+            transform: rotate(0deg);
+            margin-left: -100%;
+        }
+        .cir:nth-child(1) .per{
+            background-color: #fcc;
+        }
+        .cir:nth-child(2) .per{
+            background-color: #fc0;
+        }
+        .cir:nth-child(3) .per{
+            background-color: lightblue;
+        }
+        .cir:nth-child(4) .per{
+            background-color: lightseagreen;
+        }
+        .cir:nth-child(5) .per{
+            background-color: mediumpurple;
+        }
+        .cir:nth-child(6) .per{
+            background-color:  lightsalmon;
+        }
+        .cir>.inner{
+            width: 90%;
+            height: 90%;
+            /* background-color: #fff; */
+            /* outline: 1px solid blue; */
+            border-radius: 50%;
+            position: absolute;
+            margin: auto;
+            top: 0; bottom: 0;
+            left: 0;right: 0;
+        }
+        .cir>.inner>h2{
+            width: 20%;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            margin: auto;
+            top: 0; bottom: 0;
+            left: 0;right: 0;
+        } 
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var now =0, leftDeg=0, rightDeg=0, i=0, n=0;
+            $('.cir').mouseenter(function(){
+                i = $(this).index();
+                n=$(this).find('span').attr('data-num');
+                console.log(n);
+                 $({per:0}).animate({per:n},{
+                     duration:1000,
+                     progress:function(){
+                         now=this.per*3.6;
+                         rightDeg =Math.min(now,180);
+                         leftDeg =Math.max(now,180);
+                         $('.left>.per').eq(i).css({transform: 'rotate'+'('+leftDeg+'deg'+')'});
+                         $('.right>.per').eq(i).css('transform', 'rotate'+'('+rightDeg+'deg'+')');
+                         $('h2 span').eq(i).text(parseInt(this.per));
+                     }
+                 });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="cir">
+            <div class="left">
+                <div class="per"></div>
+            </div>
+            <div class="right">
+                <div class="per"></div>
+            </div>
+            <div class="inner">
+                <h2><span data-num="40">0</span>%</h2>
+            </div>
+        </div>
+        <div class="cir">
+            <div class="left">
+                <div class="per"></div>
+            </div>
+            <div class="right">
+                <div class="per"></div>
+            </div>
+            <div class="inner">
+                <h2><span data-num="70">0</span>%</h2>
+            </div>
+        </div>
+        <div class="cir">
+            <div class="left">
+                <div class="per"></div>
+            </div>
+            <div class="right">
+                <div class="per"></div>
+            </div>
+            <div class="inner">
+                <h2><span data-num="80">0</span>%</h2>
+            </div>
+        </div>
+        <div class="cir">
+            <div class="left">
+                <div class="per"></div>
+            </div>
+            <div class="right">
+                <div class="per"></div>
+            </div>
+            <div class="inner">
+                <h2><span data-num="50">0</span>%</h2>
+            </div>
+        </div>
+        <div class="cir">
+            <div class="left">
+                <div class="per"></div>
+            </div>
+            <div class="right">
+                <div class="per"></div>
+            </div>
+            <div class="inner">
+                <h2><span data-num="60">0</span>%</h2>
+            </div>
+        </div>
+        <div class="cir">
+            <div class="left">
+                <div class="per"></div>
+            </div>
+            <div class="right">
+                <div class="per"></div>
+            </div>
+            <div class="inner">
+                <h2><span data-num="30">0</span>%</h2>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

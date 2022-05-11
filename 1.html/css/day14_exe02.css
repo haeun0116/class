@@ -1,0 +1,35 @@
+ul{
+  list-style: none;
+}
+ul>li{
+  width: 200px;
+  height: 200px;
+  background-color: rgb(245, 161, 161);
+  margin: 5px 0px;
+}
+ul>li:nth-child(1){
+  background-color: rgb(63, 0, 13);
+}
+
+ul>li:nth-child(1)+li{
+  background-color: rgb(255, 54, 94);
+}
+
+
+ul>li:nth-child(2)~li{
+  background-color: rgb(192, 60, 86);
+  height: 50px;
+}
+
+ul>li:nth-child(4)+li{
+  background-color: rgb(192, 60, 86);
+  width: 500px;
+}
+
+ul>li:nth-child(1)~li{
+  background-color: #fc0;
+}
+
+ul>li.second+li.third{
+  width: 1000px;
+}

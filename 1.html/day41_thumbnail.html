@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day41_thumbnail</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.artView>div.thumbView{
+            width: 100%;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('./images/im/tulips-g1a8d4f5fd_1280.jpg');
+            transition: all 0.5s;
+        }
+        div.artView>div.thumb{
+            width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        div.artView>div.thumb>ul.thumbGroup{
+            width: 133.33%;
+        }
+        div.artView>div.thumb>ul.thumbGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li{
+            width: calc(100% / 8 - 20px);
+            margin:  0px 10px;
+            height: 100px;
+            float: left;
+            filter: grayscale(1);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li.show{
+            filter: grayscale(0);
+            border: 5px solid #fc0;
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(1){
+            background-image: url('./images/im/tulips-g1a8d4f5fd_1280.jpg');
+
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(2){
+            background-image: url('./images/im/clouds-g523c5f159_1280.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(3){
+            background-image: url('./images/im/pic02.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(4){
+            background-image: url('./images/im/norway-gd735035dc_1280.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(5){
+            background-image: url('./images/im/pic03.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(6){
+            background-image: url('./images/im/lemonade-gacb1e15c4_1280.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(7){
+            background-image: url('./images/im/sea-g8a0d12ecf_1280.jpg');
+        }
+        div.artView>div.thumb>ul.thumbGroup>li:nth-child(8){
+            background-image: url('./images/im/pic01.jfif');
+            
+        }
+        
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var li =$('.thumbGroup>li');
+            var view =$('div.artView>div.thumbView');
+            var group =$('.thumbGroup');
+            var btn=$('button');
+            i =0;
+            n =0;
+            t =0;
+            
+            li.first().addClass('show');
+            li.click(function(){
+                var b = $(this).css('background-image');
+                view.css('background-image',b);
+                li.removeClass('show');
+                $(this).addClass('show');
+                n=$(this).index();
+            });
+
+            btn.first().click(function(){
+                i++;
+                if(i>=2){
+                    i=2
+                }
+                group.css('margin-left',i*-17+'%');
+                
+                n++;
+                if(n>=7){
+                    n=7;
+                    btn.first().css('opacity','0'); 
+                }else if(n>0){
+                    btn.last().css('opacity','1');
+                }
+                var r =li.eq(n).css('background-image');
+                view.css('background-image',r);
+                li.removeClass('show');
+                li.eq(n).addClass('show');
+            });
+
+            btn.last().click(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                group.css('margin-left',i*-17+'%');
+
+                n--;
+                if(n<=0){
+                    n=0;
+                    btn.last().css('opacity','0'); 
+                }else if(n<=7){
+                    btn.first().css('opacity','1');
+                }
+
+                var r =li.eq(n).css('background-image');
+                view.css('background-image',r);
+                li.removeClass('show');
+                li.eq(n).addClass('show');
+                console.log(n);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="thumbView"></div>
+        <div class="thumb">
+            <ul class="thumbGroup">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <button>left</button>
+    <button>right</button>
+    
+</body>
+</html>

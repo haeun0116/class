@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+    <!-- 이 css는 다 깨지게 만들어서 가져오면 안됨 -->
+    <style>
+        .swipe{
+            width: 150vw;
+            height: 500px;
+            outline: 2px solid red;
+            touch-action: pan-y;
+            -ms-touch-action: pan-y;
+        }
+    </style>
+    <script src="./js/jQuery v1.11.1.js"></script>
+    <!-- ->1.11.1 이 제이쿼리 버전을 가지고 와야 함 그래야 작동 됨 -->
+    <script src="./js/jquery.mobile.custom.min.js"></script>
+    <script>
+        $(function(){
+            $('.swipe').swipeleft(function(){
+                alert('left');
+            });
+            $('.swipe').swiperight(function(){
+                alert('right');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="swipe">
+        <a href="http://naver.com">네이버</a>
+    </div>
+</body>
+</html>

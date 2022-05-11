@@ -1,0 +1,330 @@
+body{
+    position: relative;
+}
+div.hdrWrap{
+    background-color: #222;
+    color: #fff;
+    transition: all 0.5s;
+    width: 100%;
+}
+div.hdrWrap.fix{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    background-color: #fc0;
+}
+div.hdrWrap>div.header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    line-height: 80px;
+    font-weight: 700;
+}
+div.hdrWrap>div.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.hdrWrap>div.header>h1{
+    float: left;
+    font-size: 30px;
+}
+div.hdrWrap>div.header>ul.menu{
+    float: right;
+}
+div.hdrWrap>div.header>ul.menu>li{
+    float: left;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-left: 40px;
+}
+
+
+
+div.mainWrap{
+    background-color: #555;
+}
+div.mainWrap>div.main{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 640px;
+}
+
+
+div.cntWrap{
+    margin-top: 80px;    
+}
+div.cntWrap>div.content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content>div.header>h2{
+    line-height: 80px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+div.cntWrap>div.content>div.header>p{
+    font-size: 14px;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;         
+}
+div.cntWrap>div.content>div.section{
+    margin-top: 40px;
+}
+
+
+div.cntWrap>div.content.cnt01>div.header{
+    text-align: center;
+}
+div.cntWrap>div.content.cnt01>div.header>p{
+    width: calc(100% / 12 * 5);
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt01>div.section{
+    width: 100%;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup{
+    width: 133.33%;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article{
+    width: calc(100% / 8 - 20px);
+    margin: 0px 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article>div.image{
+    background-color: #555;
+    height: 200px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(1)>div.image{
+    transition: height 0.5s;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(2)>div.image{
+    transition: height 0.5s;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(5)>div.image{
+    transition: height 0.5s;
+    height: 240px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(4)>div.image{
+    transition: height 0.5s;
+    height: 240px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(3)>div.image{
+    transition: height 0.5s;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(6)>div.image{
+    transition: height 0.5s;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(7)>div.image{
+    transition: height 0.5s;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.artGroup>div.article:nth-child(8)>div.image{
+    transition: height 0.5s;
+    margin-top: 40px;
+}
+div.cntWrap>div.content.cnt01>div.section>div.btns{
+    width: calc(100% / 12);
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+div.cntWrap:nth-child(4){
+    background-color: #000;
+    color: #fff;
+    height: 598px;
+}
+div.cntWrap>div.content.cnt02>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article{
+    width: calc(100% / 4 - 20px);
+    margin: 0px 10px;
+    float: left;
+    position: relative;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.image{
+    background-color: #fff;
+    height: 320px;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article>div.texts{
+    transition: height 0.5s;
+    height: 0px;
+    width: 100%;
+    line-height: 80px;
+    font-size: 20px;
+    background-color: #888;
+    color: #fff;
+    position: absolute;
+    top: 320px;
+    text-align: center;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt02>div.section>div.article:hover>div.texts{
+    height: 80px;
+    width: 100%;
+    line-height: 80px;
+    font-size: 20px;
+    background-color: #888;
+    color: #fff;
+    position: absolute;
+    bottom: -80px;
+    text-align: center;
+}
+
+
+div.cntWrap>div.content.cnt03>div.header>p{
+    width: calc(100% / 12 * 8);
+    overflow: hidden;           
+}
+div.cntWrap>div.content.cnt03>div.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft{
+    float: left;
+    width: calc(100% / 12 * 3);
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article{
+    height: 400px;
+    overflow: hidden;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.image{
+    height: 400px;
+    background-color: #eee;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.texts{
+    margin-top: 0;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article:hover>div.texts{
+    margin-top: -400px;
+    text-align: center;
+    padding: 40px 20px;
+    transition: margin-top 0.5s;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.texts>h3{
+    font-size: 20px;
+    line-height: 80px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artLeft>div.article>div.texts>p{
+    width: calc(100% / 3 * 2.5);
+    line-height: 20px;
+    height: 240px;
+    overflow: hidden;
+    font-size: 14px;
+    margin: 0 auto;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight{
+    width: calc(100% / 12 * 9 - 20px);
+    margin-left: 20px;
+    float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight div.article>div.image{
+    background-color: #eee;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article:nth-child(1){
+    width: calc(100% / 9 * 3 - 10px);
+    margin-right: 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article:nth-child(1)>div.image{
+    height: 220px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article:nth-child(2){
+    width: calc(100% / 9 * 6 - 10px);
+    margin-left: 10px;
+    float: left;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artTop>div.article:nth-child(2)>div.image{
+    height: 220px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artBtm>div.article{
+    width: 100%;
+    margin-top: 20px;
+}
+div.cntWrap>div.content.cnt03>div.section>div.artRight>div.artBtm>div.article>div.image{
+    height: 160px;
+}
+
+div.ftrWrap{
+    margin-top: 80px;
+    background-color: #000;
+    color: #fff;
+}
+div.ftrWrap>div.footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 0px;
+}
+div.ftrWrap>div.footer::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+div.ftrWrap>div.footer>div.ftrLeft{
+    width: calc(100% / 12 * 2);
+    float: left;
+    padding-top: 40px;
+}
+div.ftrWrap>div.footer>div.ftrLeft>h1{
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: 700;
+}
+div.ftrWrap>div.footer>div.ftrMid{
+    width: calc(100% / 12 * 8);
+    float: left;
+}
+div.ftrWrap>div.footer>div.ftrMid>ul.info>li{
+    float: left;
+    font-size: 12px;
+    margin-right: 20px;
+}
+div.ftrWrap>div.footer>div.ftrMid>p{
+    width: calc(100% / 8 * 7);
+    line-height: 20px;
+    height: 80px;
+    overflow: hidden;
+    font-size: 12px;
+    margin-top: 30px;
+}
+div.ftrWrap>div.footer>div.ftrRight{
+    width: calc(100% / 12 * 2);
+    float: left;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 40px;
+}
+div.ftrWrap>div.footer>div.ftrRight>i:nth-child(2){
+    background-color: #fff;
+    color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+

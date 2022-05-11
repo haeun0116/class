@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day40_indexslide</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        div.artView{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        div.artView>ul{
+            width: 20%;
+            height: 20px;
+            position: absolute;
+            margin: auto;
+            left: 0; right: 0;
+            bottom: 20px;
+        }
+        div.artView>div.artGroup{
+            width: 500%;
+            transition: margin-left 0.5s;
+        }
+        div.artView>div.artGroup::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>div.artGroup>div.article{
+            width: calc(100% / 5);
+            float: left;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        div.artView>div.artGroup>div.article:nth-child(1){
+            background-image: url('./images/im/clouds-g523c5f159_1280.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(2){
+            background-image: url('./images/im/lemonade-gacb1e15c4_1280.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(3){
+            background-image: url('./images/im/norway-gd735035dc_1280.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(4){
+            background-image: url('./images/im/sea-g8a0d12ecf_1280.jpg');
+        }
+        div.artView>div.artGroup>div.article:nth-child(5){
+            background-image: url('./images/im/tulips-g1a8d4f5fd_1280.jpg');
+        }
+        div.artView>ul.paging::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        div.artView>ul.paging>li{
+            width: 20px;
+            height: 20px;
+            background-color: #fc0;
+            border-radius: 10px;
+            float: left;
+            margin: 0px 5px;
+            cursor: pointer;
+            transition: width 0.5s;
+        }
+        div.artView>ul.paging>li.show{
+            width: 40px;
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            var artGroup =$('.artGroup');
+            var btn=$('button');
+            var paging=$('div.artView>ul.paging>li');
+            var i =0;
+
+            paging.click(function(){
+                paging.removeClass('show');
+                $(this).addClass('show');
+                var ind =$(this).index();
+                //    ->인덱스 번호를 부여해줌 이걸 변수로 사용해서 변수이름으로 계속 사용
+                artGroup.css('margin-left',ind*-100+'%');
+                i = ind;
+                // -> 이렇게 연결해줘야지 왔다갔다 할때 움직임이 순서대로 잘 움직임
+            });
+
+            btn.first().click(function(){
+                i++;
+                if(i>4){
+                    i = 4;
+                }
+                artGroup.css('margin-left',i*-100+'%');
+                paging.removeClass('show');
+                paging.eq(i).addClass('show');
+                // ->형제 선택하는 eq를 사용해서 변수 i를 넣어주면 i의 숫자가 계속 커지니까 형제의 숫자가 같이 커져서 선택자가 변할 수 있게 됨
+            });
+            btn.last().click(function(){
+                i--;
+                if(i<=0){
+                    i = 0;
+                }
+                artGroup.css('margin-left',i*-100+'%');
+                paging.removeClass('show');
+                paging.eq(i).addClass('show');
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div class="article"></div>
+        </div>
+        <ul class="paging">
+            <li class="show"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button>left</button>
+    <button>right</button>
+</body>
+</html>

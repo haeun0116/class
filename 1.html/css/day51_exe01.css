@@ -1,0 +1,450 @@
+div.mntopWrap{
+    background-color: #000;
+}
+.mnTop{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 40px;
+}
+.mnTop .info{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% / 12 * 4.5);
+}
+.mnTop nav{
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% / 12 * 4);
+    text-transform: uppercase;
+}
+
+.hdrWrap{
+    background-color: #000;
+}
+.hdrWrap header{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    line-height: 80px;
+}
+.hdrWrap header h1{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.hdrWrap header nav{
+    width: calc(100% / 12 * 7);
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.mainWrap{
+    background-color: #000;
+}
+.mainWrap main{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-top: 200px;
+    padding-bottom: 50px;
+    color: #fff;
+}
+.mainWrap main .texts h2{
+    font-size: 45px;
+}
+.mainWrap main .texts p{
+    width: calc(100% / 12 * 5.5);
+    line-height: 20px;
+    height: 80px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.mainWrap main .btns{
+    margin-top: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+.mainWrap main .btns .btn{
+    width: calc(100% / 4 - 20px);
+    background-color: #fff;
+    color: #000;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.mainWrap main .btns .btn:hover{
+    background-color: #fc0;
+}
+.mainWrap main .btns .btn span{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.mainWrap main .btns .btn i{
+    line-height: 60px;
+    font-size: 25px;
+}
+
+
+.cntWrap{
+    margin-top: 120px;
+}
+.cntWrap .content{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+.cntWrap .content header h2{
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: capitalize;
+    line-height: 80px;
+}
+.cntWrap .content section{
+    margin-top: 40px;
+}
+.cntWrap .content article .texts h5{
+    font-size: 14px;
+}
+
+
+
+.cntWrap .content.cnt01 header{
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap .content.cnt01 header .hdrLeft{
+    width: calc(100% / 12 * 8);
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap .content.cnt01 header .hdrLeft ul.tab{
+    width: calc(100% / 8 * 6.5);
+    display: flex;
+    justify-content: space-between;
+    line-height: 80px;
+    font-size: 12px;
+}
+.cntWrap .content.cnt01 header .hdrLeft ul.tab li::after{
+    width: 0%;
+    border-bottom: 5px solid #fc0;
+    content: '';
+    display: block;
+    margin-top: -25px;
+    transition: width 0.5s;
+}
+.cntWrap .content.cnt01 header .hdrLeft ul.tab li:hover::after{
+    width: 100%;
+    border-bottom: 5px solid #fc0;
+    content: '';
+    display: block;
+    margin-top: -25px;
+}
+/* .cntWrap .content.cnt01 header .hdrLeft ul.tab::after{
+    width: 100%;
+    height: 2px;
+    background-color: #fc0;
+} */
+.cntWrap .content.cnt01 header .hdrRight{
+    width: calc(100% / 12 * 2);
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap .content.cnt01 header .hdrRight .btn{
+    width: calc(100% / 3);
+    outline: 1px solid #ccc;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    text-align: center;
+    color: #ccc;
+}
+.cntWrap .content.cnt01 header .hdrRight .btn:hover{
+    color: #000;
+}
+.cntWrap .content.cnt01 section{
+    overflow: hidden;
+}
+.cntWrap .content.cnt01 section .artGroup{
+    width: 200%;
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap .content.cnt01 section .artGroup article{
+    width: calc(100% / 6 - 20px);
+}
+.cntWrap .content.cnt01 section .artGroup article .image{
+    height: 200px;
+    background-color: #222;
+}
+.cntWrap .content.cnt01 section .artGroup article .texts{
+    padding: 20px 0px 0px 25px;
+    border: 1px solid #000;
+}
+.cntWrap .content.cnt01 section .artGroup article:hover .texts{
+    border: 1px solid #ccc;
+}
+.cntWrap .content.cnt01 section .artGroup article .texts h5{
+    font-size: 14px;
+    line-height: 20px;
+}
+.cntWrap .content.cnt01 section .artGroup article .texts h3{
+    font-size: 18px;
+    line-height: 40px;
+}
+.cntWrap .content.cnt01 section .artGroup article .texts p{
+    width: calc(100% / 4 * 3.5);
+    line-height: 20px;
+    height: 80px;
+    font-size: 14px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+.cntWrap .content.cnt01 section .artGroup article .texts .btn{
+    width: calc(100% / 4);
+    background-color: #ccc;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: auto;
+    font-size: 30px;
+    font-weight: 700;
+}
+.cntWrap .content.cnt01 section .artGroup article:hover .texts .btn{
+    background-color: #fc0;
+    color: #fff;
+}
+
+.bnrWrap{
+    margin-top: 120px;
+}
+.bnrWrap .banner{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+
+.bnrWrap.bnrWrap01{
+    background-color: #fc0;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01{
+    padding: 80px 0px;
+    text-align: center;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 h2{
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 80px;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 p{
+    width: calc(100% / 12 * 8);
+    margin: 0 auto;
+    line-height: 20px;
+    height: 40px;
+    overflow: hidden;
+    font-size: 12px;
+}
+.bnrWrap.bnrWrap01 .banner.bnr01 .btn{
+    width: calc(100% / 12);
+    background-color: #fff;
+    color: #000;
+    margin: 0 auto;
+    line-height: 40px;
+    margin-top: 40px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+
+.cntWrap .content.cnt02 header{
+    display: flex;
+    justify-content: space-between;
+}
+.cntWrap .content.cnt02 header .hdrLeft h2{
+    line-height: 40px;
+}
+.cntWrap .content.cnt02 header .hdrLeft h5{
+    line-height: 40px;
+    font-size: 14px;
+}
+.cntWrap .content.cnt02 header .hdrRight{
+    width: calc(100% / 12);
+    line-height: 40px;
+    outline: 1px solid #ccc;
+    text-align: center;
+    height: 40px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.cntWrap .content.cnt02 section article{
+    width: 100%;
+    height: 120px;
+    /* position: relative; */
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    /* -> 방향 바꿔주는 애 모든것에 다 먹힘 근데 이렇게 하면 다 같이 반대로 돌아가기 때문에 텍스트는 따로 또 디렉션을 해줘야 함 */
+}
+.cntWrap .content.cnt02 section article .image{
+    width: calc(100% / 12 * 3);
+    height: 120px;
+    background-color: #ccc;
+    /* position: absolute; */
+    /* right: 0; */
+}
+.cntWrap .content.cnt02 section article .texts{
+    width: calc(100% / 12 * 9 );
+    /* position: absolute; */
+    /* left: 0; */
+    display: flex;
+    justify-content: space-between;
+    direction: ltr;
+}
+.cntWrap .content.cnt02 section article .texts .txtLeft{
+    width: calc(100% / 9 * 2);
+}
+.cntWrap .content.cnt02 section article .texts .txtLeft .score{
+    display: flex;
+}
+.cntWrap .content.cnt02 section article .texts .txtLeft .score h3{
+    font-size: 48px;
+    color: #fc0;
+}
+.cntWrap .content.cnt02 section article .texts .txtLeft .score h5{
+    padding-top: 40px;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+.cntWrap .content.cnt02 section article .texts .txtLeft h5{
+    font-size: 12px;
+}
+.cntWrap .content.cnt02 section article .texts .txtRight{
+    width: calc(100% / 9 * 6.5);
+    padding-right: 20px;
+}
+.cntWrap .content.cnt02 section article .texts .txtRight h3{
+    font-size: 18px;
+}
+.cntWrap .content.cnt02 section article .texts .txtRight p{
+    width: 100%;
+    line-height: 20px;
+    height: 60px;
+    font-size: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+
+.bnrWrap.bnrWrap02{
+    background-color: #7ad;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02{
+    display: flex;
+    justify-content: space-between;
+    padding: 120px 0px;
+    color: #fff;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .texts{
+    width: calc(199% / 12 * 7);
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .texts h2{
+    font-size: 48px;
+    text-transform: capitalize;
+    line-height: 50px;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .texts h5{
+    font-size: 18px;
+    line-height: 40px;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .texts p{
+    width: calc(100% / 7 * 6.5);
+    line-height: 20px;
+    height: 120px;
+    overflow: hidden;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .texts .btn{
+    width: calc(100% / 6.5);
+    background-color: orange;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 40px;
+}
+.bnrWrap.bnrWrap02 .banner.bnr02 .image{
+    background-color: #ccc;
+    height: 240px;
+    width: calc(100% / 12 * 4.5);
+}
+
+.ftrwrap{
+    background-color: #333;
+}
+.ftrwrap footer{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0px;
+    font-size: 12px;
+}
+.ftrwrap footer .info{
+    width: calc(100% / 4);
+}
+.ftrwrap footer .info h4{
+    line-height: 40px;
+}
+.ftrwrap footer .info p{
+    width: calc(100% / 3 * 2.5);
+    line-height: 20px;
+    height: 60px;
+    overflow: hidden;
+}
+.ftrwrap footer ul{
+    width: calc(100% / 4);
+}
+.ftrwrap footer ul li{
+    line-height: 30px;
+}
+.ftrwrap footer ul li:nth-child(1){
+    text-transform: capitalize;
+}
+.ftrwrap footer ul li:nth-child(2){
+    margin-top: 30px;
+}
+.ftrwrap footer ul:nth-child(4) li:nth-child(1)~li{
+    margin-left: 10px;
+}
+
+body{
+    position: relative;
+}
+.toTop{
+    width: 40px; height: 40px;
+    position: fixed;
+    right: 0; bottom: 10%;
+    background-color: #ccc;
+    opacity: 0.5;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>day37_accordian</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    ul{
+      width: 50%;
+      margin: 100px auto;
+    }
+    ul>li:nth-child(odd){
+      line-height: 40px;
+      background-color: #333;
+      color: #fff;
+      text-transform: uppercase;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    /* ul>li:nth-child(odd).col{
+      background-color: #fc0;
+      color: #000;
+    } */
+    ul>li:nth-child(even){
+      font-size: 14px;
+      line-height: 20px;
+      padding: 0px 20px;
+      height: 0px;
+      overflow: hidden;
+      transition: height 0.5s;
+    }
+    ul>li:nth-child(even)>p{
+      margin-top: 40px;
+      height: 40px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    ul>li:nth-child(odd).show+li{
+      height: 120px;
+    }
+
+  </style>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function(){
+      $('ul>li').first().css({
+        'background-color':'#fc0',
+          'color': '#000'
+      });
+      $('ul>li').even().click(function(){
+        $('ul>li').removeClass('show');
+        $(this).addClass('show');
+        $('ul>li').even().css({
+          'background-color': '#333',
+          'color': '#fff'
+        });
+        $(this).even().css({
+          'background-color':'#fc0',
+          'color': '#000'
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <ul>
+    <li class="show">title</li>
+    <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis culpa laboriosam placeat aut earum, rerum sequi aspernatur est laudantium sit sunt libero ipsa explicabo eum id rem aliquam aperiam iure.</p></li>
+    <li>title</li>
+    <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis culpa laboriosam placeat aut earum, rerum sequi aspernatur est laudantium sit sunt libero ipsa explicabo eum id rem aliquam aperiam iure.</p></li>
+    <li>title</li>
+    <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis culpa laboriosam placeat aut earum, rerum sequi aspernatur est laudantium sit sunt libero ipsa explicabo eum id rem aliquam aperiam iure.</p></li>
+    <li>title</li>
+    <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis culpa laboriosam placeat aut earum, rerum sequi aspernatur est laudantium sit sunt libero ipsa explicabo eum id rem aliquam aperiam iure.</p></li>
+    <li>title</li>
+    <li><p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis culpa laboriosam placeat aut earum, rerum sequi aspernatur est laudantium sit sunt libero ipsa explicabo eum id rem aliquam aperiam iure.</p></li>
+  </ul>
+  
+</body>
+</html>

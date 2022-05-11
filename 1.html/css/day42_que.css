@@ -1,0 +1,206 @@
+div.cntWrap.cntWrap01>div.artView.artView01{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01{
+    width: 500%;
+    transition: margin-left 0.5s;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01>div.article{
+    width: calc(100% / 5);
+    height: 250px;
+    float: left;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01>div.article:nth-child(1){
+    background-color: lightskyblue;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01>div.article:nth-child(2){
+    background-color: indianred;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01>div.article:nth-child(3){
+    background-color: lightpink;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01>div.article:nth-child(4){
+    background-color: lightsteelblue;
+}
+div.cntWrap.cntWrap01>div.artView.artView01>div.artGroup.artGroup01>div.article:nth-child(5){
+    background-color: lightgreen;
+}
+
+div.cntWrap{
+    margin-top: 100px;
+}
+
+div.cntWrap.cntWrap02>div.artView.artView02{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>div.artGroup.artGroup02{
+    width: 100%;
+    height: 500px;
+    transition: margin-top 0.5s;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>div.artGroup.artGroup02>div.article{
+    width: 100%;
+    height: 500px;
+    float: left;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>div.artGroup.artGroup02>div.article:nth-child(1){
+    background-color: lightcoral;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>div.artGroup.artGroup02>div.article:nth-child(2){
+    background-color: forestgreen;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>div.artGroup.artGroup02>div.article:nth-child(3){
+    background-color: greenyellow;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>div.artGroup.artGroup02>div.article:nth-child(4){
+    background-color: lightgreen;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>div.artGroup.artGroup02>div.article:nth-child(5){
+    background-color: hotpink;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>ul.paging{
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    margin: auto;
+    top: 0;bottom: 0;
+    right: 0;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>ul.paging>li{
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #000;
+    margin-top: 10px;
+}
+div.cntWrap.cntWrap02>div.artView.artView02>ul.paging>li.on{
+    height: 30px;
+}
+
+
+div.cntWrap.cntWrap03{
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+div.cntWrap.cntWrap03>div.thumbView{
+    width: 100%;
+    height: 500px;
+    background-image: url('../images/im/clouds-g523c5f159_1280.jpg');
+}
+div.cntWrap.cntWrap03>div.thumbnails{
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+div.cntWrap.cntWrap03>div.thumbnails>div.article{
+    width: calc(100% / 5 - 20px);
+    height: 100px;
+    margin: 0px 10px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.cntWrap.cntWrap03>div.thumbnails>div.article:nth-child(1){
+    background-image: url('../images/im/clouds-g523c5f159_1280.jpg');
+}
+div.cntWrap.cntWrap03>div.thumbnails>div.article:nth-child(2){
+    background-image: url('../images/im/lemonade-gacb1e15c4_1280.jpg');
+}
+div.cntWrap.cntWrap03>div.thumbnails>div.article:nth-child(3){
+    background-image: url('../images/im/lemonade-gacb1e15c4_1280.jpg');
+}
+div.cntWrap.cntWrap03>div.thumbnails>div.article:nth-child(4){
+    background-image: url('../images/im/sea-g8a0d12ecf_1280.jpg');
+}
+div.cntWrap.cntWrap03>div.thumbnails>div.article:nth-child(5){
+    background-image: url('../images/im/norway-gd735035dc_1280.jpg');
+}
+
+
+
+div.cntWrap.cntWrap04{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+div.cntWrap.cntWrap04>div.thumbView{
+     width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup{
+    width: 500%;
+    height: 500px; 
+    transition: margin-left 0.5s;
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup>div.article{
+    width: calc(100% / 5);
+    height: 500px;
+    float: left;
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup>div.article:nth-child(1){
+    background-image: url('../images/im/clouds-g523c5f159_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup>div.article:nth-child(2){
+    background-image: url('../images/im/tulips-g1a8d4f5fd_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup>div.article:nth-child(3){
+    background-image: url('../images/im/lemonade-gacb1e15c4_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup>div.article:nth-child(4){
+    background-image: url('../images/im/sea-g8a0d12ecf_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbGroup>div.article:nth-child(5){
+    background-image: url('../images/im/norway-gd735035dc_1280.jpg');
+}
+
+div.cntWrap.cntWrap04>div.thumbView>div.thumbnails{
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbnails>div.article{
+    width: calc(100% / 5 - 20px);
+    height: 100px;
+    margin: 0px 10px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbnails>div.article:nth-child(1){
+    background-image: url('../images/im/clouds-g523c5f159_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbnails>div.article:nth-child(2){
+    background-image: url('../images/im/tulips-g1a8d4f5fd_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbnails>div.article:nth-child(3){
+    background-image: url('../images/im/lemonade-gacb1e15c4_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbnails>div.article:nth-child(4){
+    background-image: url('../images/im/sea-g8a0d12ecf_1280.jpg');
+}
+div.cntWrap.cntWrap04>div.thumbView>div.thumbnails>div.article:nth-child(5){
+    background-image: url('../images/im/norway-gd735035dc_1280.jpg');
+}

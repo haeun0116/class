@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .artView{
+            width: 100vw;
+            height: 200px;
+            overflow: hidden;
+            touch-action: pan-y;
+            -ms-touch-action: pan-y;
+        }
+        .artGroup{
+            width: 600vw;
+            display: flex;
+            transition: margin-left 0.5s;
+        }
+        .article{
+            width: calc(100% / 6);
+            height: 200px;
+            font-size: 50px;
+            line-height: 200px;
+            text-align: center;
+        }
+        .article.a1{
+            background-color: darkgreen;
+        }
+        .article.a2{
+            background-color: indianred;
+        }
+        .article.a3{
+            background-color: rgb(240, 173, 4);
+        }
+        .article.a4{
+            background-color: lightgrey;
+        }
+        .article.a5{
+            background-color: lightcoral;
+        }
+        .article.a6{
+            background-color: lightseagreen;
+        }
+    </style>
+    <script src="./js/jQuery v1.11.1.js"></script>
+    <script src="./js/jquery.mobile.custom.min.js"></script>
+    <script>
+        $(function(){
+            var i=0;
+            $('.artView').swipeleft(function(){
+                i++;
+                if(i>=5){
+                    i=5;
+                }
+                $('.artGroup').css('marginLeft',i*-100+'vw');
+            });
+            $('.artView').swiperight(function(){
+                i--;
+                if(i<=0){
+                    i=0;
+                }
+                $('.artGroup').css('marginLeft',i*-100+'vw');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="artView">
+        <div class="artGroup">
+            <div class="article a1">1</div>
+            <div class="article a2">2</div>
+            <div class="article a3">3</div>
+            <div class="article a4">4</div>
+            <div class="article a5">5</div>
+            <div class="article a6">6</div>
+        </div>
+    </div>
+    
+</body>
+</html>

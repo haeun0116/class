@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day65_exe02(dragSlide)</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>
+        .content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .bar{
+            width: 100%;
+            height: 40px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .drag{
+            width: calc(100% / 12);
+            height: 40px;
+            background-color: #000;
+            position: absolute;
+            left: 0; top: 0;
+        }
+        .section{
+            width: 100%;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        .artGroup{
+            width: 200%;
+            display: flex;
+            justify-content: space-around;
+        }
+        .article{
+            width: calc(100% / 8 - 10px);
+        }
+        .image{
+            height: 280px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .image.i1{
+            background-image: url('./images/im/cnt02_pic01.jpg');
+        }
+        .image.i2{
+            background-image: url('./images/im/cnt02_pic02.jpg');
+        }
+        .image.i3{
+            background-image: url('./images/im/cnt02_pic03.jpg');
+        }
+        .image.i4{
+            background-image: url('./images/im/cnt02_pic04.jpg');
+        }
+        .image.i5{
+            background-image: url('./images/im/cnt02_pic05.jpg');
+        }
+        .image.i6{
+            background-image: url('./images/im/cnt02_pic06.jpg');
+        }
+        .image.i7{
+            background-image: url('./images/im/bnr_pic03.jpg');
+        }
+        .image.i8{
+            background-image: url('./images/im/bnr_pic05.jpg');
+        }
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            var k = parseInt($('.bar').css('width'));
+            $('.drag').draggable({
+                containment:'.bar',
+                axis:'x',
+                // x축으로만 움직여요 라는 의미 
+                drag:function(){
+                    var s =$(this).position().left;
+                    $('.artGroup').css({
+                        marginLeft : -(s/k*108.5)+'%'
+                    });
+                    console.log(s/k*108.5);
+                }
+            });
+            // console.log($('.bar').css('width'));
+            
+            // $('.drag').draggable({
+            //     containment:'.bar',
+            //     axis:'x',
+            //     drag:function(){
+            //         var ii = parseInt($('.bar').css('width'));
+            //         var sli =$(this).position().left;
+            //         console.log(ii);
+            //         console.log(sli/ii*100);
+            //         $('.artGroup').css({marginLeft:-(sli/659.188)*100+'px'});
+            //     }
+            // });
+        });
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="bar">
+                <div class="drag"></div>
+            </div>
+            <div class="section">
+                <div class="artGroup">
+                    <div class="article">
+                        <div class="image i1"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i2"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i3"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i4"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i5"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i6"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i7"></div>
+                    </div>
+                    <div class="article">
+                        <div class="image i8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

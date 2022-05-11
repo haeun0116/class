@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day46_exe02</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/xeicon.min.css">
+    <style>
+        div.cntWrap>div.content{
+            width: 80%;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        div.cntWrap>div.content>div.artView{
+            width: 100%;
+            height: 480px;
+            position: relative;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup{
+            width: 100%;
+            height: 480px;
+            position: relative;
+        }
+        div.cntWrap>div.content>div.artView>h4{
+            position: absolute;
+            right: calc(100% / 12);
+            bottom: 5px;
+            font-size: 22px;
+        }
+        div.cntWrap>div.content>div.artView>div.btns{
+            width: calc(100% / 12);
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            right: 0;bottom: 0;
+            font-size: 30px;
+            text-align: center;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article{
+            width: 100%;
+            height: 480px;
+            position: absolute;
+            top: 0;left: 0;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.image{
+            width: calc(100% / 12 * 7);
+            height: 480px;
+            position: absolute;
+            top: 0; left: 0;
+            font-size: 30px;
+            color: #fff;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.image.i1{
+             background-color: #ccc;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.image.i2{
+            background-color: rgb(155, 155, 155);
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.image.i3{
+            background-color: #555;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.image.i4{
+            background-color: #333;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.image.i5{
+            background-color: #222;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.image.i6{
+            background-color: #999;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.texts{
+            width: calc(100% / 12 * 8);
+            height: 400px;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background-color: #000;
+            color: #fff;
+            padding: 40px calc(100% / 12);
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.texts>div.btn{
+            line-height: 40px;
+            width: calc(100% / 8 * 2);
+            background-color: #fff;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 18px;
+            border-radius: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.texts>h2{
+            line-height: 80px;
+            text-transform: capitalize;
+            font-weight: 700;
+            font-size: 36px;
+        }
+        div.cntWrap>div.content>div.artView>div.artGroup>div.article>div.texts>p{
+            line-height: 20px;
+            height: 120px;
+            overflow: hidden;
+            font-size: 18px;
+            width: calc(100% / 8 * 5.5);
+            margin-top: 30px;
+        }
+
+    </style>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+
+            // 일단 숫자 i가 바뀌려면 어제했듯이 i++이던 i--요소들이 필요하겠죠?네 그걸 어디에 넣어야하는지 고민해보시고요, 넣은걸 언제 텍스트 적용을 해야하는지 고민해보세요
+            // 오늘 하루종일 해도 되니까 천천히 생각해보세요
+           var i =0;
+           var num = $('.artGroup').children().length;
+           $('h4').find('span:last').text(num);
+           $('h4').find('span:first').text(num);
+
+            $('.btns>i:first').click(function(){
+                $('.artGroup').find('.article:last').stop().fadeOut(500,function(){
+                    $(this).prependTo($('.artGroup'));
+                    $(this).fadeIn();
+                    
+                    i--;
+                    i = (num+i)%num;
+                    if(i==0){
+                        i=6;
+                    }
+                    console.log(i);
+                    $('h4').find('span:first').text(i);
+                });
+// .stop()멈추게 해주는 함수 더블클릭해도 안넘어가짐
+
+            });
+            
+            $('.btns>i:last').click(function(){
+                $('.artGroup').find('.article:first').fadeOut(function(){
+                    $(this).appendTo($('.artGroup'));
+                    $(this).fadeIn();
+                    
+                    i++;
+                    i = (num+i)%num;
+                    if(i%num == 0){
+                        i=num;
+                    }
+                    $('h4').find('span:first').text(i);
+                });
+
+                
+            });
+            
+
+           
+        });
+
+    </script>
+</head>
+<body>
+    <div class="cntWrap">
+        <div class="content">
+            <div class="artView">
+                <div class="artGroup">
+                    <div class="article">
+                        <div class="image i1">1</div>
+                        <div class="texts">
+                            <h2>content title1</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam blanditiis repellat odit, obcaecati saepe autem esse ut atque repellendus consequatur laborum exercitationem unde cum vero animi recusandae rem reprehenderit fugiat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iure officia ipsum quia. Necessitatibus, dolores? Dolor neque veniam asperiores temporibus blanditiis. Repellendus eos architecto sint explicabo dignissimos. Reiciendis, magni ullam.</p>
+                            <div class="btn">button</div>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="image i2">2</div>
+                        <div class="texts">
+                            <h2>content title2</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam blanditiis repellat odit, obcaecati saepe autem esse ut atque repellendus consequatur laborum exercitationem unde cum vero animi recusandae rem reprehenderit fugiat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iure officia ipsum quia. Necessitatibus, dolores? Dolor neque veniam asperiores temporibus blanditiis. Repellendus eos architecto sint explicabo dignissimos. Reiciendis, magni ullam.</p>
+                            <div class="btn">button</div>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="image i3">3</div>
+                        <div class="texts">
+                            <h2>content title3</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam blanditiis repellat odit, obcaecati saepe autem esse ut atque repellendus consequatur laborum exercitationem unde cum vero animi recusandae rem reprehenderit fugiat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iure officia ipsum quia. Necessitatibus, dolores? Dolor neque veniam asperiores temporibus blanditiis. Repellendus eos architecto sint explicabo dignissimos. Reiciendis, magni ullam.</p>
+                            <div class="btn">button</div>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="image i4">4</div>
+                        <div class="texts">
+                            <h2>content title4</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam blanditiis repellat odit, obcaecati saepe autem esse ut atque repellendus consequatur laborum exercitationem unde cum vero animi recusandae rem reprehenderit fugiat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iure officia ipsum quia. Necessitatibus, dolores? Dolor neque veniam asperiores temporibus blanditiis. Repellendus eos architecto sint explicabo dignissimos. Reiciendis, magni ullam.</p>
+                            <div class="btn">button</div>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="image i5">5</div>
+                        <div class="texts">
+                            <h2>content title5</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam blanditiis repellat odit, obcaecati saepe autem esse ut atque repellendus consequatur laborum exercitationem unde cum vero animi recusandae rem reprehenderit fugiat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iure officia ipsum quia. Necessitatibus, dolores? Dolor neque veniam asperiores temporibus blanditiis. Repellendus eos architecto sint explicabo dignissimos. Reiciendis, magni ullam.</p>
+                            <div class="btn">button</div>
+                        </div>
+                    </div>
+                    <div class="article">
+                        <div class="image i6">6</div>
+                        <div class="texts">
+                            <h2>content title6</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam blanditiis repellat odit, obcaecati saepe autem esse ut atque repellendus consequatur laborum exercitationem unde cum vero animi recusandae rem reprehenderit fugiat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iure officia ipsum quia. Necessitatibus, dolores? Dolor neque veniam asperiores temporibus blanditiis. Repellendus eos architecto sint explicabo dignissimos. Reiciendis, magni ullam.</p>
+                            <div class="btn">button</div>
+                        </div>
+                    </div>
+                </div>
+                <h4><span>0</span>/<span>0</span></h4>
+                <div class="btns">
+                    <i class="xi-angle-left-min"></i>
+                    <i class="xi-angle-right-min"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* 메뉴탑 */
+div.mntopWrap{}
+div.mntopWrap>div.menuTop{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  outline: 2px solid red;
+  height: 40px;
+}
+div.mntopWrap>div.menuTop>div.logos{}
+div.mntopWrap>div.menuTop>div.logos>i{}
+div.mntopWrap>div.menuTop>ul.nav{}
+div.mntopWrap>div.menuTop>ul.nav>li{}
+
+
+/* 헤더 */
+div.hdrWrap{}
+div.hdrWrap>div.header{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  outline: 2px solid red;
+  height: 80px;
+}
+div.hdrWrap>div.header>h1{}
+div.hdrWrap>div.header>ul.nav{}
+div.hdrWrap>div.header>ul.nav>li{}
+div.hdrWrap>div.header>ul.nav>li>i{}
+
+
+/* 컨텐츠 공통영역 */
+div.cntWrap{}
+div.cntWrap>div.content{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  outline: 2px solid red;
+}
+div.cntWrap>div.content>div.header{}
+div.cntWrap>div.content>div.header>h2{}
+div.cntWrap>div.content>div.header>p{}
+div.cntWrap>div.content>div.section{}
+div.cntWrap>div.content>div.section div.article{}
+div.cntWrap>div.content>div.section div.article>div.image{}
+div.cntWrap>div.content>div.section div.article>div.texts{}
+div.cntWrap>div.content>div.section div.article>div.texts>h3{}
+div.cntWrap>div.content>div.section div.article>div.texts>h5{}
+div.cntWrap>div.content>div.section div.article>div.texts>p{}
+div.cntWrap>div.content>div.section div.article>div.texts>div.sns{}
+div.cntWrap>div.content>div.section div.article>div.texts>div.sns>i{}
+div.cntWrap>div.content>div.section div.article>div.texts>div.btn{}
+
+
+/* 컨텐츠1 */
+div.cntWrap.cntWrap01{}
+div.cntWrap.cntWrap01>div.content.cnt01{
+  height: 1640px;
+}
+div.cntWrap.cntWrap01>div.content.cnt01>div.header{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.header>h2{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.header>p{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.image{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.image.i1{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.image.i2{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.texts{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.texts>h3{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.texts>h5{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.texts>p{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.texts>div.sns{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artTop>div.article>div.texts>div.sns>i{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.image{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.image.i1{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.image.i2{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.image.i3{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.texts{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>h3{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>p{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>div.sns{}
+div.cntWrap.cntWrap01>div.content.cnt01>div.section>div.artBtm>div.article>div.texts>div.sns>i{}
+
+/* 컨텐츠2 */
+div.cntWrap.cntWrap02{}
+div.cntWrap.cntWrap02>div.content.cnt02{
+  height: 920px;
+}
+div.cntWrap.cntWrap02>div.content.cnt02>div.header{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.header>h2{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.header>p{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.section{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.section>div.image{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.section>div.texts{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.section>div.texts>h3{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.section>div.texts>h5{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.section>div.texts>p{}
+div.cntWrap.cntWrap02>div.content.cnt02>div.section>div.texts>div.btn{}
+
+
+/* 컨텐츠3 */
+div.cntWrap.cntWrap03{}
+div.cntWrap.cntWrap03>div.content.cnt03{
+  height: 760px;
+}
+div.cntWrap.cntWrap03>div.content.cnt03>div.header{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.header>h2{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.header>p{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.image{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.image.i1{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.image.i2{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.image.i3{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.image.i4{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.texts{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.texts>h3{}
+div.cntWrap.cntWrap03>div.content.cnt03>div.section>div.article>div.texts>p{}
+
+
+/* 푸터 */
+div.ftrWrap{}
+div.ftrWrap>div.footer{
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  outline: 2px solid red;
+  height: 360px;
+}
+div.ftrWrap>div.footer>h1{}
+div.ftrWrap>div.footer>p{}
+div.ftrWrap>div.footer>div.sns{}
+div.ftrWrap>div.footer>div.sns>i{}
